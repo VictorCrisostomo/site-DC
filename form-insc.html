@@ -12,26 +12,63 @@
     <title>Formulario de Inscrição</title>
 </head>
 <body>
-    <h1>Inscrição Retiro Canes - 2023</h1>
+    <header>
+        <h1>Inscrição Retiro Canes - 2023</h1>
+    </header>
 
-    <form>
-        <input type="text" name="nome" id="nome">
-        <input type="number" name="nascimento" id="nascimento">
-        <input type="tel" name="telefone" id="telefone">
-        <input type="email" name="email" id="email">
-        <input type="text" name="endereco" id="endereco">
-        <p>Fazer download da <a>Autorização Pastoral.</a></p>
-        <input type="file" name="autorizacao" id="autorizacao">
+<div class="container col-12 col-md-12">
+    <div class="row justify-content-between">
+        <main class="col-12 col-md-6">
+            <form class="row justify-content-between">
+                <section class="col-12 col-md-12">
 
-        <h3>Modalidade de Pagamento</h3>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+                        <label for="nome" class="form-label">Nome</label>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-md-6 form-floating mb-2">
+                            <input type="text" class="form-control" id="nascimento" placeholder="Data de nascimento" name="nascimento">
+                            <label for="nascimento" class="form-label">Data de nascimento</label>
+                        </div>
+                        <div class="col-12 col-md-6 form-floating mb-2">
+                            <input type="tel" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
+                            <label for="telefone" class="form-label">Telefone</label>
+                        </div>
 
-        <select name="pagamento">
-            <option selected disabled value="">Informe a modalidade de pagamento</option>
-            <option>Inteira R$ 250,00 (adulto)</option>
-            <option>Meia R$ 125,00 (crianças 06 a 11 anos)</option>
-
-            <input type="button" value="Finalizar inscrição">
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                        <label for="email" class="form-label">email</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="endereco" placeholder="Endereço" name="endereco">
+                        <label for="endereco" class="form-label">Endereço</label>
+                    </div>
+                    <div class="mb-2">
+                        <label for="autorizacao" class="form-label">Adicione aqui sua autorização pastoral assinada</label>
+                        <input type="file" class="form-control" id="autorizacao" name="autorizacao">
+                    </div>
+                    <p>Fazer download da <a>Autorização Pastoral.</a></p>
             
-    </form>
+                    <h3>Modalidade de Pagamento</h3>
+
+                    <div class="mb-2">
+                        <select class="form-select" name="pagamento">
+                            <option selected disabled value="">Informe a modalidade de pagamento</option>
+                            <option>Inteira R$ 250,00 (adulto)</option>
+                            <option>Meia R$ 125,00 (crianças 06 a 11 anos)</option>
+                        </select>
+                    </div>
+
+                    <input type="button" class="btn btn-primary" value="Finalizar inscrição">     
+                </section>
+            </form>
+        </main>
+        <aside class="col-12 col-md-6">
+            <h1>Aqui vai os Slides</h1>
+        </aside>
+    </div>
+</div>
 </body>
 </html>
