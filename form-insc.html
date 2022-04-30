@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
+
     <title>Formulario de Inscrição</title>
 </head>
 <body>
@@ -16,59 +18,64 @@
         <h1>Inscrição Retiro Canes - 2023</h1>
     </header>
 
-<div class="container col-12 col-md-12">
-    <div class="row justify-content-between">
+<div class="container col-11 col-md-9" id="form-container">
+    <div class="row align-items-center">
         <main class="col-12 col-md-6">
+            <!--FORM-->
             <form class="row justify-content-between">
-                <section class="col-12 col-md-12">
+                <section class="col-12 col-md-11">
 
-                    <div class="form-floating mb-2">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
                         <label for="nome" class="form-label">Nome</label>
                     </div>
-                    <div class="row justify-content-between">
-                        <div class="col-12 col-md-6 form-floating mb-2">
+                    <div class="row align-items-center" id="min-inputs">
+                        <div class="col-12 col-md-6 form-floating mb-3">
                             <input type="text" class="form-control" id="nascimento" placeholder="Data de nascimento" name="nascimento">
                             <label for="nascimento" class="form-label">Data de nascimento</label>
                         </div>
-                        <div class="col-12 col-md-6 form-floating mb-2">
+                        <div class="col-12 col-md-6 form-floating mb-3">
                             <input type="tel" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
                             <label for="telefone" class="form-label">Telefone</label>
                         </div>
 
                     </div>
-                    <div class="form-floating mb-2">
+                    <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="email" placeholder="email" name="email">
                         <label for="email" class="form-label">email</label>
                     </div>
-                    <div class="form-floating mb-2">
+                    <div class="form-floating mb-4">
                         <input type="text" class="form-control" id="endereco" placeholder="Endereço" name="endereco">
                         <label for="endereco" class="form-label">Endereço</label>
                     </div>
-                    <div class="mb-2">
-                        <label for="autorizacao" class="form-label">Adicione aqui sua autorização pastoral assinada</label>
+                    <div class="mb-3" id="autor-area">
+                        <label for="autorizacao" class="form-label">Enviar autorização pastoral <b>Assinada</b></label>
                         <input type="file" class="form-control" id="autorizacao" name="autorizacao">
+                        <p>Fazer download da <a href="www.google.com">Autorização Pastoral.</a></p>
                     </div>
-                    <p>Fazer download da <a>Autorização Pastoral.</a></p>
             
-                    <h3>Modalidade de Pagamento</h3>
-
-                    <div class="mb-2">
+                    
+                    <div class="mb-3">
+                        <h4>Modalidade de Pagamento</h4>
                         <select class="form-select" name="pagamento">
                             <option selected disabled value="">Informe a modalidade de pagamento</option>
                             <option>Inteira R$ 250,00 (adulto)</option>
                             <option>Meia R$ 125,00 (crianças 06 a 11 anos)</option>
                         </select>
                     </div>
-
-                    <input type="button" class="btn btn-primary" value="Finalizar inscrição">     
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <input type="button" class="btn btn-primary" value="Finalizar inscrição">     
+                    </div>
                 </section>
             </form>
         </main>
         <aside class="col-12 col-md-6">
-            <h1>Aqui vai os Slides</h1>
+            <h1 class="justfy-content-center align-items-center">Aqui vai os Slides</h1>
         </aside>
     </div>
 </div>
+<footer>
+    developed by @victor
+</footer>
 </body>
 </html>

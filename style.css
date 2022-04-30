@@ -1,0 +1,50 @@
+body {
+    background-color: #e8fffa80 !important;
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+/*form ====================*/
+#form-container {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+    margin: 10px auto;
+    padding: 25px;
+}
+
+#form-container .form-control {
+    border: none;
+    border-bottom: 1px solid #CCC;
+    border-radius: 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#autor-area label {
+    padding: 5px 10px;
+    width: 67%;
+    display: block !important;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+    background-color: #CCC;
+    color: #333;
+    
+    cursor: pointer;
+    transition: .5s;
+}
+
+#autor-area label:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#min-inputs .form-label {
+    margin-left: 12px;
+}
