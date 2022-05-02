@@ -1,5 +1,5 @@
 body {
-    background-color: #e8fffa80 !important;
+    background-color: #ebebeb !important;
 }
 
 header{
@@ -15,6 +15,9 @@ header{
     margin: 10px auto;
     padding: 25px;
 }
+#min-inputs .form-label {
+    margin-left: 12px;
+}
 
 #form-container .form-control {
     border: none;
@@ -22,29 +25,86 @@ header{
     border-radius: 0;
 }
 
+#form-container .form-control:focus {
+    box-shadow: none;
+}
+
+#form-container .form-floating label {
+    color: #CCC;
+}
+
+#form-container .form-floating > .form-control:focus~label {
+    color: #333;
+}
+
+#autor-area {
+    padding: 20px 0px 5px 0px;
+}
+
 input[type="file"] {
     display: none;
 }
 
-#autor-area label {
-    padding: 5px 10px;
-    width: 67%;
-    display: block !important;
-
-    border: 1px solid #333;
-    border-radius: 15px;
-    background-color: #CCC;
-    color: #333;
-    
-    cursor: pointer;
-    transition: .5s;
+#form-container .btn-outline-secondary{
+    border-radius: 20px;
 }
 
-#autor-area label:hover {
+#form-container a {
+    color: #333;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    z-index: 0;
+}
+
+#form-container a::before{
+    content: "";
+    inset: 0;
+    background: #ED8E53;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#form-container a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
     background-color: #333;
+}
+
+#form-container a:hover {
     color: #fff;
 }
 
-#min-inputs .form-label {
-    margin-left: 12px;
+#form-container h6 {
+    color: #6c757d;
+}
+
+#form-container .form-select {
+    color: #6c757d;
+
+    border: none;
+    border-bottom: 1px solid #CCC;
+    border-radius: 0;
+}
+
+#form-container .form-select > option {
+    color: #6c757d;
+}
+
+#form-container .form-select:focus {
+    box-shadow: none;
+}
+
+#form-container .btn-form {
+    background-color: #ED8E53;
+    color: #fff;
+}
+
+#form-container .btn-form:hover {
+    box-shadow: .5px 10px 10px rgba(0, 0, 0, .2);
+
+    background-color: #df7838
 }
