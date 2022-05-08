@@ -70,67 +70,8 @@
             </form>
         </main>
         <!-- SLIDER -->
-        <aside class="col-12 col-md-6">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <!-- <div class="carousel-indicators">
-                    <button
-                    class="active"
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="0"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="1"
-                    aria-current="true"
-                    aria-label="Slide 2"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="2"
-                    aria-current="true"
-                    aria-label="Slide 3"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="3"
-                    aria-current="true"
-                    aria-label="Slide 4"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="4"
-                    aria-current="true"
-                    aria-label="Slide 5"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="5"
-                    aria-current="true"
-                    aria-label="Slide 6"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="6"
-                    aria-current="true"
-                    aria-label="Slide 7"
-                    ></button>
-                    <button
-                    type="button"
-                    data-bs-target="carousel"
-                    data-bs-slide-to="7"
-                    aria-current="true"
-                    aria-label="Slide 8"
-                    ></button>
-                </div> -->
+        <aside class="col-12 col-md-6" id="slider-container">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img
@@ -188,24 +129,29 @@
                         class="d-block w-100"
                         />
                     </div>
+                    <div class="carousel-item">
+                        <img
+                        src="./assets/slide-9.jpg"
+                        alt="imagem 9"
+                        class="d-block w-100"
+                        />
+                    </div>
                 </div>
                 <button
                 class="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExampleDark"
+                data-bs-target="#carouselExampleFade"
                 data-bs-slide="prev"
                 >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden" alt="Anterior">Previous</span>
                 </button>
                 <button
                 class="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExampleDark"
+                data-bs-target="#carouselExampleFade"
                 data-bs-slide="next"
                 >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden" alt="Proxima">Next</span>
                 </button>
             </div>
         </aside>

@@ -110,9 +110,10 @@ input[type="file"] {
 }
 
 
-/* Silider */
+/* Slider */
+#slider-container .carousel-inner{
+    width: 85% !important;
 
-#carousel {
-    border-radius: 50px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .2);
+    margin-left: 35px;
+    border-radius: 5px;
 }
