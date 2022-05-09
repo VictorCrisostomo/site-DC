@@ -8,7 +8,7 @@ header{
 }
 
 /*form ====================*/
-#form-container {
+#main-container {
     background-color: #FFFFFF;
     border-radius: 20px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
@@ -99,21 +99,45 @@ input[type="file"] {
 }
 
 #form-container .btn-form {
+    margin-top: -10px;
+    width: 100%;
     background-color: #ED8E53;
     color: #fff;
 }
 
 #form-container .btn-form:hover {
-    box-shadow: .5px 10px 10px rgba(0, 0, 0, .2);
-
-    background-color: #df7838
+    background-color: #eb7831
 }
 
 
 /* Slider */
 #slider-container .carousel-inner{
-    width: 85% !important;
-
-    margin-left: 35px;
+    margin-top: 50px;
     border-radius: 5px;
+}
+
+#slider-container h5 {
+    color: #ffffff;
+    text-shadow: #222 1px 1px;
+}
+
+#slider-container .btn-dark:focus {
+    box-shadow: none;
+}
+
+@media(min-width: 768px) {
+    #form-container .btn-finish{
+        display: flex;
+        justify-content: space-around;
+    }
+    #form-container .btn-form{
+        width: 50%;
+    }
+
+    #slider-container .carousel-inner{
+        width: 85% !important;
+    
+        margin-left: 35px;
+        border-radius: 5px;
+    }
 }
