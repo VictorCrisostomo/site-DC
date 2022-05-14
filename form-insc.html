@@ -11,6 +11,8 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
 
+<script src="script.js" defer></script>
+<script src="./relatorio/src/server.js" defer></script>
     <title>Formulario de Inscrição</title>
 </head>
 <body>
@@ -46,8 +48,8 @@
                         <label for="email" class="form-label">email</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="endereco" placeholder="Endereço" name="endereco">
-                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="localidade" placeholder="localidade" name="localidade">
+                        <label for="localidade" class="form-label">Localidade</label>
                     </div>
                     <div class="mb-3" id="autor-area">
                         <label for="autorizacao" class="form-label btn btn-outline-secondary">Enviar autorização pastoral <b>Assinada</b></label>
@@ -57,14 +59,14 @@
             
                     <h6>Modalidade de Pagamento</h6>
                     <div class="mb-5">
-                        <select class="form-select" name="pagamento">
+                        <select class="form-select" id="pagamento" name="pagamento">
                             <option selected disabled value="">Informe a modalidade de pagamento</option>
-                            <option>Inteira R$ 250,00 (adulto)</option>
-                            <option>Meia R$ 125,00 (crianças 06 a 11 anos)</option>
+                            <option id="adulto">Inteira R$ 250,00 (adulto)</option>
+                            <option id="crianca">Meia R$ 125,00 (crianças 06 a 11 anos)</option>
                         </select>
                     </div>
                     <div class="btn-finish">
-                        <input type="button" class="btn btn-form" value="Finalizar inscrição">     
+                        <input type="button" class="btn btn-form" id="btn-concluir" value="Finalizar inscrição">     
                     </div>
                 </section>
             </form>
