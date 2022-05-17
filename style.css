@@ -41,9 +41,18 @@ header{
     padding: 20px 0px 5px 0px;
 }
 
-input[type="file"] {
+input[type="file"]{
     display: none;
 }
+
+input[type="date"]{
+    color: #333;
+    
+}
+input[type="date"]::-webkit-calendar-picker-indicator{
+    opacity: 30%;
+}
+
 
 #form-container .btn-outline-secondary{
     border-radius: 20px;
@@ -123,6 +132,28 @@ input[type="file"] {
 
 #slider-container .btn-dark:focus {
     box-shadow: none;
+}
+
+.container-footer {
+    max-width: 100% !important;
+    margin-top: 30px;
+
+    background-color: #CCC
+}
+.text-footer {
+    color: #6c757d;
+    padding-top: 10px
+}
+.img-footer {
+    width: 100px;
+    padding: 0 0 20px 0;
+
+    display: block;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    opacity: 0.5;
 }
 
 @media(min-width: 768px) {
