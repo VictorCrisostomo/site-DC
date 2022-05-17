@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/VictorCrisostomo/site-DC/issues"
   },
-  "homepage": "https://github.com/VictorCrisostomo/site-DC#readme",
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+  "homepage": "https://github.com/VictorCrisostomo/site-DC#readme"
 }
