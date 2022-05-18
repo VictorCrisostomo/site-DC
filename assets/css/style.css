@@ -20,6 +20,7 @@ header{
 }
 
 #form-container .form-control {
+    color: #6c757d;
     border: none;
     border-bottom: 1px solid #CCC;
     border-radius: 0;
@@ -46,7 +47,7 @@ input[type="file"]{
 }
 
 input[type="date"]{
-    color: #333;
+    color: #6c757d;
     
 }
 input[type="date"]::-webkit-calendar-picker-indicator{
@@ -115,7 +116,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 #form-container .btn-form:hover {
-    background-color: #eb7831
+    background-color: #eb7831;
 }
 
 
@@ -135,8 +136,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 .container-footer {
-    max-width: 100% !important;
+
     margin-top: 30px;
+    padding-bottom: 20px;
 
     background-color: #CCC
 }
@@ -144,13 +146,59 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     color: #6c757d;
     padding-top: 10px
 }
-.img-footer {
-    width: 100px;
-    padding: 0 0 20px 0;
+.img-footer-left {
 
     display: block;
-    margin-top: -10px;
+    margin-top: 10px;
     margin-left: auto;
+    margin-right: auto;
+}
+.logo-igreja {
+    width: 175px;;
+    padding: 25px 0 10px 0;
+}
+.logo-retiro {
+    width: 175px;;
+    padding-bottom: 15px;
+}
+
+.text-footer{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: .2em;
+}
+.txt2{
+    padding-top: 0;
+}
+
+.text-contact {
+    text-align: center;
+}
+
+.text-contact a {
+
+    text-decoration: underline;
+
+    color: #333;
+    font-weight: 500;
+    transition: 0.2s
+}
+.text-contact a:hover {
+    color: #eb7831;
+
+}
+
+.text-extra-footer {
+    margin-top: 20px;
+    text-align: end;
+}
+.img-logo {
+    width: 90px;
+    padding: 15px 0 10px 0;
+
+    display: block;
+
+    margin-left: 0;
     margin-right: auto;
 
     opacity: 0.5;
@@ -166,9 +214,31 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     }
 
     #slider-container .carousel-inner{
-        width: 85% !important;
-    
-        margin-left: 35px;
+        width: 95% !important;
+        margin-top: -10px;
+        margin-left: 5px;
         border-radius: 5px;
+    }
+    .text-footer{
+        text-align: center;
+        padding-top: 20px;
+        /* margin-left: 35px; */
+        margin-bottom: .2em;
+    }
+    .txt2{
+        padding-top: 0;
+    }
+    .text-contact {
+        text-align: center;
+        /* margin-left: 35px; */
+        margin-bottom: 0;
+        padding-bottom: 7px;
+
+    }
+    hr {
+        width: 100%;
+
+        border: none;
+        border-top: 1px solid;
     }
 }
