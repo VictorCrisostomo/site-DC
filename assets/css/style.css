@@ -7,6 +7,10 @@ header{
     padding: 20px;
 }
 
+h1, h5 {
+    color: #333;
+}
+
 /*form ====================*/
 #main-container {
     background-color: #FFFFFF;
@@ -181,7 +185,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
     color: #333;
     font-weight: 500;
-    transition: 0.2s
+    transition: 0.2s;
 }
 .text-contact a:hover {
     color: #eb7831;
@@ -202,6 +206,46 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-right: auto;
 
     opacity: 0.5;
+}
+
+/* TELA DE SUCESSOS ======================== */
+#main-container .text-data {
+    margin-bottom: 5px;
+}
+.link{
+    margin-bottom: 36px;
+    font-size: 12px;
+}
+
+
+#pass-container{
+    width: 100%;
+}
+#pass-container .img-overlay{
+    width: 100%;
+    border: none;
+    box-shadow: .5px 5px 5px rgba(0, 0, 0, .2);
+}
+#btn-down{
+    border: none;
+    background-color: #ED8E53;
+    color: #FFF;
+
+    margin: 15px 0 20px 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+#btn-down:focus{
+    box-shadow: none;
+}
+#btn-down:hover{
+    background-color: #eb7831;
+}
+
+#btn-pagamento {
+    margin-bottom: 25px;
 }
 
 @media(min-width: 768px) {
