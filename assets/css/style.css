@@ -208,6 +208,8 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 0.5;
 }
 
+
+
 /* TELA DE SUCESSOS ======================== */
 #main-container .text-data {
     margin-bottom: 5px;
@@ -285,4 +287,23 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         border: none;
         border-top: 1px solid;
     }
+
+
+    /* TELA DE SUCESSOS */
+    #pass-container{
+        width: 50%;
+        margin-top: -108px
+    }
+
+    #btn-act{
+        margin-left:auto;
+        margin-top:-110px;
+        padding-bottom: 30px;
+    }
+    
+    #btn-pagamento,
+    #btn-whats{
+        width: 30%;
+    }
+
 }
