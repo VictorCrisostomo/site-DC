@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,9 +51,12 @@
                         <input type="text" class="form-control" id="localidade" placeholder="localidade" name="localidade">
                         <label for="localidade" class="form-label">Localidade</label>
                     </div>
-                    <div class="mb-3" id="autor-area">
-                        <label for="autorizacao" class="form-label btn btn-outline-secondary">Enviar autorização pastoral <b>Assinada</b></label>
-                        <input type="file" class="form-control" id="autorizacao" name="autorizacao">
+
+                    <div class="mb-3 file-upload" id="autor-area">
+                        <h6>Enviar Autorização Pastoral Assinada</h6>
+                        <input type="file" class="form-control file-upload__input" id="real-file" name="autorizacao">
+                        <button type="button" class="btn btn-outline-secondary file-upload__button" id="btn-file">Selecione o arquivo</button>
+                        <label for="autorizacao" class="form-label file-upload__label" id="text-file"></label>
                         <p class="text-muted">Fazer download da <a href="https://drive.google.com/file/d/11KX6ODR9kN4a1m7JZvLe31_RMy5-LNyW/view?usp=sharing" target="_blank">Autorização Pastoral.</a></p>
                     </div>
             

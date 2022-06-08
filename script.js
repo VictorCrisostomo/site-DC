@@ -6,13 +6,43 @@ const tel = document.querySelector('#telefone');
 const email = document.querySelector('#email');
 const local = document.querySelector('#localidade');
 
-const autor = document.querySelector('#autorizacao');
+const realFile = document.querySelector('#real-file');
+const btnFile = document.querySelector('#btn-file');
+const textFile = document.querySelector('#text-file');
 
-const pagamento = document.querySelector('#pagamento');
+const modalPag = document.querySelector('#modal-pag');
 const adulto = document.querySelector('#adulto');
 const crianca = document.querySelector('#crianca');
 
+const formPag = document.querySelector('#form-pag');
+const pix = document.querySelector('#pix');
+const cred = document.querySelector('#credito');
+const pagMao = document.querySelector('#pag-mao');
+
 const btnCon = document.querySelector('#btn-concluir');
+
+    Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), function (button) {
+        const hiddenInput = button.parentElement.querySelector('.file-upload__input');
+        const label = button.parentElement.querySelector('.file-upload__label');
+        const defaultLabelText = 'Nenhum arquivo selecionado.';
+
+        // Set default text for label
+        label.textContent = defaultLabelText;
+        label.title = defaultLabelText;
+
+        button.addEventListener('click', function () {
+            hiddenInput.click();
+        });
+
+        hiddenInput.addEventListener('change', function () {
+            const filenameList = Array.prototype.map.call(hiddenInput.files, function (file) {
+                return file.name
+            });
+
+            label.textContent = filenameList.join() || defaultLabelText;
+            label.title = label.textContent;
+        });
+    });
 
 
    btnCon.addEventListener('click', showMe);
@@ -51,17 +81,10 @@ const btnCon = document.querySelector('#btn-concluir');
     console.log(tel.value);
     console.log(email.value);
     console.log(local.value);
-    
-    if (autor.value === true) {
-        console.log('autorização adicionada 🎉')
-    } else {
-        console.log('autorização não adicionada 😢')
-    }
+    console.log(textFile.textContent)
 
-    if (pagamento.value === adulto) {
-        console.log (pagamento.value);
-    } else {
-        console.log (pagamento.value);
-    }
+    console.log (modalPag.value)
+
+    console.log (formPag.value)
 }
 

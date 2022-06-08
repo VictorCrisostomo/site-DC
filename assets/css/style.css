@@ -63,6 +63,21 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     border-radius: 20px;
 }
 
+#autor-area h6 {
+    margin-bottom: 15px;
+}
+#autor-area .btn:focus {
+    box-shadow: none;
+}
+#autor-area label {
+    font-size: 14px;
+    color: #6c757d;
+}
+#autor-area p {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
 #form-container a {
     color: #333;
     position: relative;
