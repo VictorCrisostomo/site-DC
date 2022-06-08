@@ -21,6 +21,34 @@ const pagMao = document.querySelector('#pag-mao');
 
 const btnCon = document.querySelector('#btn-concluir');
 
+
+// Calcular idade --------------
+function calculaIdade(dataNasc){ 
+    let dataAtual = new Date();
+    let anoAtual = dataAtual.getFullYear();
+    let anoNascParts = dataNasc.split('-');
+    let diaNasc =anoNascParts[2];
+    let mesNasc =anoNascParts[1];
+    let anoNasc =anoNascParts[0];
+    let idade = anoAtual - anoNasc;
+    let mesAtual = dataAtual.getMonth() + 1; 
+
+        //Se mes atual for menor que o nascimento, nao fez aniversario ainda;  
+        if(mesAtual < mesNasc){
+            idade--; 
+        } else {
+        //Se estiver no mes do nascimento, verificar o dia
+            if(mesAtual == mesNasc){ 
+                if(new Date().getDate() < diaNasc ){ 
+                //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
+                idade--; 
+                }
+            }
+        } 
+    return idade; 
+}
+
+    // Mostrar arquivo selecionado do input file
     Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), function (button) {
         const hiddenInput = button.parentElement.querySelector('.file-upload__input');
         const label = button.parentElement.querySelector('.file-upload__label');
@@ -46,45 +74,19 @@ const btnCon = document.querySelector('#btn-concluir');
 
 
    btnCon.addEventListener('click', showMe);
-
+    // Chamar valores dos inputs
    function showMe() {
 
-
-
-    function calculaIdade(dataNasc){ 
-        let dataAtual = new Date();
-        let anoAtual = dataAtual.getFullYear();
-        let anoNascParts = dataNasc.split('-');
-        let diaNasc =anoNascParts[2];
-        let mesNasc =anoNascParts[1];
-        let anoNasc =anoNascParts[0];
-        let idade = anoAtual - anoNasc;
-        let mesAtual = dataAtual.getMonth() + 1; 
-        //Se mes atual for menor que o nascimento, nao fez aniversario ainda;  
-        if(mesAtual < mesNasc){
-        idade--; 
-        } else {
-        //Se estiver no mes do nascimento, verificar o dia
-        if(mesAtual == mesNasc){ 
-        if(new Date().getDate() < diaNasc ){ 
-        //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
-        idade--; 
-        }
-        }
-        } 
-        return idade; 
-       }
-
+    // converter data americana para data brasileira
+    let dataBr = nascimento.value.split('-').reverse().join('/')
 
     console.log(nome.value);
-    console.log(`${nascimento.value} | ${calculaIdade(nascimento.value)} anos`);
+    console.log(`${dataBr} | ${calculaIdade(nascimento.value)} anos`);
     console.log(tel.value);
     console.log(email.value);
     console.log(local.value);
     console.log(textFile.textContent)
-
     console.log (modalPag.value)
-
     console.log (formPag.value)
 }
 
