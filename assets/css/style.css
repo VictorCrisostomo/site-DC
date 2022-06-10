@@ -248,7 +248,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     box-shadow: .5px 5px 5px rgba(0, 0, 0, .2);
 }
 
-#nome-data {
+#btn-act p {
+    font-size: 14px;
+}
+
+/* #nome-data {
     font-weight: 700;
     font-size: 18px;
 
@@ -292,7 +296,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-right: auto;
     margin-bottom: 0;
 
-}
+} */
 
 #btn-down{
     border: none;
@@ -316,43 +320,45 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-bottom: 25px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1440px) {
     #pass-container{
         position: relative;
         width: 50%;
+
+        margin-top: -8%;
     }
     
     #nome-data {
         font-weight: 700;
-        font-size: 21px;
+        font-size: 19px;
 
         position: absolute;
         z-index: 10;
 
-        margin-top: 77px;
-        margin-left: 191px;
+        margin-top: 66px;
+        margin-left: 166.5px;
 
         padding: 0 !important;
     }
     #nome-secondario-data {
         font-weight: 600;
-        font-size: 11px;
+        font-size: 9px;
 
         position: absolute;
         z-index: 10;
 
-        margin-top: 106px;
-        margin-left: 191px;
+        margin-top: 92px;
+        margin-left: 166.5px;
     }
     #origem-data {
         font-weight: 700;
-        font-size: 6.5px;
+        font-size: 6px;
 
         position: absolute;
         z-index: 10;
-
-        margin-top: 149.5px;
-        margin-left: 191px;
+        
+        margin-top: 130px;
+        margin-left: 166.5px;
     }
     #num-insc {
         font-weight: 500;
@@ -360,11 +366,73 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
         position: absolute;
         z-index: 10;
-        
-        margin-top: 205px;
-        margin-left: 465px;
+
+        margin-top: 178px;
+        margin-left: 398px;
         margin-right: auto;
         margin-bottom: 0;
+    }
+
+    #btn-act{
+        margin-top: -90px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #pass-container{
+        position: relative;
+        width: 50%;
+
+        margin-top: -20%;
+    }
+    
+    #nome-data {
+        font-weight: 700;
+        font-size: 16px;
+
+        position: absolute;
+        z-index: 10;
+
+        margin-top: 48px;
+        margin-left: 124.5px;
+
+        padding: 0 !important;
+    }
+    #nome-secondario-data {
+        font-weight: 600;
+        font-size: 7px;
+
+        position: absolute;
+        z-index: 10;
+
+        margin-top: 70px;
+        margin-left: 124.5px;
+    }
+    #origem-data {
+        font-weight: 700;
+        font-size: 4.5px;
+
+        position: absolute;
+        z-index: 10;
+
+        margin-top: 96.5px;
+        margin-left: 124.5px;
+    }
+    #num-insc {
+        font-weight: 500;
+        font-size: 7px;
+
+        position: absolute;
+        z-index: 10;
+
+        margin-top: 132px;
+        margin-left: 294px;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+
+    #btn-act{
+        margin-top: -155px;
     }
 }
 
@@ -372,6 +440,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     #pass-container{
         position: relative;
         width: 100%;
+
+        margin-top: 0;
+
         order: -1 !important;
     }
     
@@ -418,6 +489,10 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         margin-left: 465px;
         margin-right: auto;
         margin-bottom: 0;
+    }
+
+    #btn-act{
+        margin-top: 0;
     }
 }
 
@@ -619,13 +694,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     /* TELA DE SUCESSOS */
     #btn-act{
         margin-left:auto;
-        margin-top:-110px;
+        /* margin-top: -155px; */
         padding-bottom: 30px;
     }
     
     #btn-pagamento,
     #btn-whats{
-        width: 30%;
+        width: 50%;
     }
 
 }
