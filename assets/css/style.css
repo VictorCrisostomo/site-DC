@@ -252,51 +252,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     font-size: 14px;
 }
 
-/* #nome-data {
-    font-weight: 700;
-    font-size: 18px;
-
-    position: absolute;
-    z-index: 10;
-
-    margin-top: 65px;
-    margin-left: 179px;
-
-    padding: 0 !important;
-}
-#nome-secondario-data {
-    font-weight: 600;
-    font-size: 14px;
-
-    position: absolute;
-    z-index: 10;
-
-    margin-top: 90px;
-    margin-left: 179px;
-}
-#origem-data {
-    font-weight: 700;
-    font-size: 6px;
-
-    position: absolute;
-    z-index: 10;
-
-    margin-top: 139px;
-    margin-left: 178px;
-}
-#num-insc {
-    font-weight: 500;
-    font-size: 10px;
-
-    position: absolute;
-    z-index: 10;
-
-    margin-top: 189px;
-    margin-left: 425px;
-    margin-right: auto;
-    margin-bottom: 0;
-
-} */
 
 #btn-down{
     border: none;
@@ -325,56 +280,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -8%;
+        margin-top: -13%;
     }
     
-    #nome-data {
-        font-weight: 700;
-        font-size: 19px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 66px;
-        margin-left: 166.5px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-        font-weight: 600;
-        font-size: 9px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 92px;
-        margin-left: 166.5px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 6px;
-
-        position: absolute;
-        z-index: 10;
-        
-        margin-top: 130px;
-        margin-left: 166.5px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 9px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 178px;
-        margin-left: 398px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
-
     #btn-act{
-        margin-top: -90px;
+        margin-top: -13%;
     }
 }
 
@@ -383,56 +293,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -20%;
+        margin-top: -25%;
     }
     
-    #nome-data {
-        font-weight: 700;
-        font-size: 16px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 48px;
-        margin-left: 124.5px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-        font-weight: 600;
-        font-size: 7px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 70px;
-        margin-left: 124.5px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 4.5px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 96.5px;
-        margin-left: 124.5px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 7px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 132px;
-        margin-left: 294px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
-
     #btn-act{
-        margin-top: -155px;
+        margin-top: -25%;
     }
 }
 
@@ -445,212 +310,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
         order: -1 !important;
     }
-    
-    #nome-data {
-        font-weight: 700;
-        font-size: 21px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 77px;
-        margin-left: 191px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-        font-weight: 600;
-        font-size: 11px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 106px;
-        margin-left: 191px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 6.5px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 149.5px;
-        margin-left: 191px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 9px;
-
-        position: absolute;
-        z-index: 10;
-        
-        margin-top: 205px;
-        margin-left: 465px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
 
     #btn-act{
         margin-top: 0;
     }
 }
-
-@media only screen and (max-width: 425px) {
-    #pass-container{
-        position: relative;
-        width: 100%;
-    }
-    
-    #nome-data {
-        font-weight: 700;
-        font-size: 15px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 50px;
-        margin-left: 126.5px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-        font-weight: 600;
-        font-size: 7px;
-
-        position: absolute;
-        z-index: 10;
-        
-        margin-top: 71px;
-        margin-left: 126.5px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 4.5px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 99px;
-        margin-left: 126.5px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 7px;
-
-        position: absolute;
-        z-index: 10;
-        
-        margin-top: 134px;
-        margin-left: 300px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-    #pass-container{
-        position: relative;
-        width: 100%;
-    }
-    
-    #nome-data {
-        font-weight: 700;
-        font-size: 14px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 42px;
-        margin-left: 110.5px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-        font-weight: 600;
-        font-size: 6px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 62px;
-        margin-left: 110.5px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 4px;
-        position: absolute;
-        z-index: 10;
-        margin-top: 86px;
-        margin-left: 110.5px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 6px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 119px;
-        margin-left: 265px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    #pass-container{
-        position: relative;
-        width: 100%;
-    }
-    
-    #nome-data {
-        font-weight: 700;
-        font-size: 12px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 34px;
-        margin-left: 93px;
-
-        padding: 0 !important;
-    }
-    #nome-secondario-data {
-    font-weight: 600;
-    font-size: 5px;
-
-    position: absolute;
-    z-index: 10;
-
-    margin-top: 51px;
-    margin-left: 93px;
-    }
-    #origem-data {
-        font-weight: 700;
-        font-size: 3px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 73px;
-        margin-left: 93px;
-    }
-    #num-insc {
-        font-weight: 500;
-        font-size: 5px;
-
-        position: absolute;
-        z-index: 10;
-
-        margin-top: 100px;
-        margin-left: 225px;
-        margin-right: auto;
-        margin-bottom: 0;
-    
-    }
-}
-
 
 @media(min-width: 768px) {
     #form-container .btn-finish{

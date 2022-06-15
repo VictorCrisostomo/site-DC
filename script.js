@@ -22,6 +22,9 @@ const pagMao = document.querySelector('#pag-mao');
 const btnCon = document.querySelector('#btn-concluir');
 
 
+const nomeConf = document.querySelector('#nome-conf');
+
+
 // Calcular idade --------------
 function calculaIdade(dataNasc){ 
     let dataAtual = new Date();
@@ -72,7 +75,6 @@ function calculaIdade(dataNasc){
         });
     });
 
-
    btnCon.addEventListener('click', showMe);
     // Chamar valores dos inputs
    function showMe() {
@@ -85,9 +87,19 @@ function calculaIdade(dataNasc){
     console.log(tel.value);
     console.log(email.value);
     console.log(local.value);
-    console.log(textFile.textContent)
-    console.log (modalPag.value)
-    console.log (formPag.value)
+    console.log(textFile.textContent);
+    console.log (modalPag.value);
+    console.log (formPag.value);
+    
+    sessionStorage.setItem('nome', nome.value);
+    sessionStorage.setItem('nascimento', `${dataBr} | ${calculaIdade(nascimento.value)} anos`);
+    sessionStorage.setItem('tel', tel.value);
+    sessionStorage.setItem('email', email.value);
+    sessionStorage.setItem('local', local.value);
+    sessionStorage.setItem('autorizacao', textFile.textContent);
+    sessionStorage.setItem('mod-pag', modalPag.value);
+    sessionStorage.setItem('form-pag', formPag.value);
+    
 }
 
 
