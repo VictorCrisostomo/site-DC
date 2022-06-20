@@ -112,8 +112,16 @@ function showMe() {
 
 }
 
+const addLoading = () => {
+    btnCon.innerHTML = '<img src="./assets/img/load-icon-png-27.png" class="loading">'
+}
+const removeLoading = () => {
+    btnCon.innerHTML = 'Concluir Inscrição'
+}
+
 const handleSubmit = (event) => {
     event.preventDefault();
+    addLoading();
 
     fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
 
@@ -133,7 +141,7 @@ const handleSubmit = (event) => {
             modalidade: modalPag.value,
             forma: formPag.value,
         })
-    })
+    }).then(() => removeLoading())
 }
 
 Form.addEventListener('submit', handleSubmit);

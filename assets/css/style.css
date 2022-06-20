@@ -132,10 +132,29 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     width: 100%;
     background-color: #ED8E53;
     color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+#form-container .btn-form:focus {
+    box-shadow: none;
 }
 
 #form-container .btn-form:hover {
     background-color: #eb7831;
+}
+
+#form-container .loading{
+    width: 20px;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
 }
 
 
