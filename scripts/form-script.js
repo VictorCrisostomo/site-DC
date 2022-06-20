@@ -1,5 +1,7 @@
 'use strict';
 
+const Form = document.querySelector('form');
+
 const nome = document.querySelector('#nome');
 const nascimento = document.querySelector('#nascimento');
 const tel = document.querySelector('#telefone');
@@ -79,8 +81,8 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
 })
 
 // Gerar ID de inscrição
-const inscID = (min, max) => 
-Math.floor(Math.random() * (max - min + 1)) + min
+const inscID = () => 
+Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300
 
 
 btnCon.addEventListener('click', showMe);
@@ -96,7 +98,7 @@ function showMe() {
     console.log(textFile.textContent);
     console.log(modalPag.value);
     console.log(formPag.value);
-    console.log(`0000${inscID(1000, 1300)}`)
+    console.log(`0000${inscID()}`)
     
     sessionStorage.setItem('nome', nome.value);
     sessionStorage.setItem('nascimento', `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
@@ -106,31 +108,32 @@ function showMe() {
     sessionStorage.setItem('autorizacao', textFile.textContent);
     sessionStorage.setItem('modalidade-pagamento', modalPag.value);
     sessionStorage.setItem('forma-pagamento', formPag.value);
-    sessionStorage.setItem('inscricao-ID', `0000${inscID(1000, 1300)}`);
+    sessionStorage.setItem('inscricao-ID', `0000${inscID()}`);
 
-    
 }
 
+const handleSubmit = (event) => {
+    event.preventDefault();
 
+    fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
 
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: sessionStorage.getItem('inscricao-ID'),
+            name: nome.value,
+            idade:`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
+            telefone: tel.value,
+            email: email.value,
+            Localidade: local.value,
+            autorizacao: textFile.textContent,
+            modalidade: modalPag.value,
+            forma: formPag.value,
+        })
+    })
+}
 
-
-
-
-// const nomeData = document.querySelector('#nome-data');
-// const segNomeData = document.querySelector('#segundo-nome-data');
-// const origemData = document.querySelector('#origem-data');
-// const numInscData = document.querySelector('#num-insc-data');
-
-// btnEnv.addEventListener('click', showMe);
-
-// // Chamar valores dos inputs
-// function showMe() {
-
-// nomeData.innerHTML= nome.value;
-// segNomeData.innerHTML= segNome.value;
-// origemData.innerHTML= origem.value;
-// numInscData.innerHTML= `Nº 0000${numInsc.value}`;
-
-// }
-
+Form.addEventListener('submit', handleSubmit);
