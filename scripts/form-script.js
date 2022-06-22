@@ -90,6 +90,12 @@ btnCon.addEventListener('click', showMe);
 // Chamar valores dos inputs
 function showMe() {
 
+    // const insc = {
+    //     name: nome.value
+    // }
+
+    // sessionStorage.setItem('inscricao', JSON.stringify(insc));
+
     console.log(nome.value);
     console.log(`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
     console.log(tel.value);
@@ -100,18 +106,19 @@ function showMe() {
     console.log(formPag.value);
     console.log(`0000${inscID()}`)
     
-    sessionStorage.setItem('nome', nome.value);
-    sessionStorage.setItem('nascimento', `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
-    sessionStorage.setItem('telefone', tel.value);
-    sessionStorage.setItem('email', email.value);
-    sessionStorage.setItem('localidade', local.value);
-    sessionStorage.setItem('autorizacao', textFile.textContent);
-    sessionStorage.setItem('modalidade-pagamento', modalPag.value);
-    sessionStorage.setItem('forma-pagamento', formPag.value);
-    sessionStorage.setItem('inscricao-ID', `0000${inscID()}`);
+    localStorage.setItem('nome', nome.value);
+    localStorage.setItem('nascimento', `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
+    localStorage.setItem('telefone', tel.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('localidade', local.value);
+    localStorage.setItem('autorizacao', textFile.textContent);
+    localStorage.setItem('modalidade-pagamento', modalPag.value);
+    localStorage.setItem('forma-pagamento', formPag.value);
+    localStorage.setItem('inscricao-ID', `0000${inscID()}`);
 
 }
 
+// adicinar e remover loading do botão
 const addLoading = () => {
     btnCon.innerHTML = '<img src="./assets/img/load-icon-png-27.png" class="loading">'
 }
@@ -119,6 +126,7 @@ const removeLoading = () => {
     btnCon.innerHTML = 'Concluir Inscrição'
 }
 
+// Enviar dados para planilha
 const handleSubmit = (event) => {
     event.preventDefault();
     addLoading();

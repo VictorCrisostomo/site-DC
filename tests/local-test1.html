@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Session - Page 1</title>
+</head>
+
+<body>
+    <div>
+        <h2>Page 1</h2>
+    </div>
+    <div>
+        <input type="text" value="" id="inputText">
+        <input type="button" id="inputButton" value="Salvar valor na session storoge">
+    </div>
+    <script>
+        var btn = document.querySelector("#inputButton");
+
+        btn.addEventListener("click", function () {
+            var text = document.querySelector("#inputText").value;
+            localStorage.setItem('valueText', text);
+        })
+    </script>
+</body>
+
+</html>
