@@ -90,11 +90,6 @@ btnCon.addEventListener('click', showMe);
 // Chamar valores dos inputs
 function showMe() {
 
-    // const insc = {
-    //     name: nome.value
-    // }
-
-    // sessionStorage.setItem('inscricao', JSON.stringify(insc));
 
     console.log(nome.value);
     console.log(`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
@@ -120,7 +115,7 @@ function showMe() {
 
 // adicinar e remover loading do botão
 const addLoading = () => {
-    btnCon.innerHTML = '<img src="./assets/img/load-icon-png-27.png" class="loading">'
+    btnCon.innerHTML = '<img src="../assets/img/load-icon-png-27.png" class="loading">'
 }
 const removeLoading = () => {
     btnCon.innerHTML = 'Concluir Inscrição'
@@ -139,7 +134,7 @@ const handleSubmit = (event) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            id: sessionStorage.getItem('inscricao-ID'),
+            id: localStorage.getItem('inscricao-ID'),
             name: nome.value,
             idade:`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
             telefone: tel.value,
