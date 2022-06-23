@@ -26,6 +26,12 @@ btnWhats.addEventListener('click', showMe);
 // // Chamar valores dos inputs
 function showMe() {
 
+    const Name = localStorage.getItem('nome')
+    const spliceName = localStorage.getItem('nome').split(' ')
+    const firstName = Name.split(' ', 1)
+    const lastName = spliceName.slice(1).join(' ')
+
+
     //  campos de conferencia
     nomeConf.innerHTML= localStorage.getItem('nome');
     nascConf.innerHTML= localStorage.getItem('nascimento');
@@ -37,8 +43,8 @@ function showMe() {
     formPagConf.innerHTML= localStorage.getItem('forma-pagamento');
 
     // campos do overlay
-    nomeData.innerHTML= localStorage.getItem('nome');
-    segNomeData.innerHTML= localStorage.getItem('');
+    nomeData.innerHTML= firstName;
+    segNomeData.innerHTML= lastName;
     origemData.innerHTML= localStorage.getItem('localidade');
     numInscData.innerHTML= `Nº ${localStorage.getItem('inscricao-ID')}`;
 
