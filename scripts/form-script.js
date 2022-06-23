@@ -24,37 +24,59 @@ const pagMao = document.querySelector('#pag-mao');
 const btnCon = document.querySelector('#btn-concluir');
 
 
-// converter data americana para data brasileira
-function editData (dataBr) {
-    let data = dataBr.split('-').reverse().join('/')
-        return data
-}
+const Utils = {
+    // converter data americana para data brasileira
+    editData(dataBr) {
+        let data = dataBr.split('-').reverse().join('/')
+            return data
+    },
 
-// Calcular idade
-function calculaIdade(dataNasc){ 
+    // Calcular idade
+    calculaIdade(dataNasc){ 
 
-    let dataAtual = new Date();
-    let anoAtual = dataAtual.getFullYear();
-    let anoNascParts = dataNasc.split('-');
-    let diaNasc =anoNascParts[2];
-    let mesNasc =anoNascParts[1];
-    let anoNasc =anoNascParts[0];
-    let idade = anoAtual - anoNasc;
-    let mesAtual = dataAtual.getMonth() + 1; 
-    
-        //Se mes atual for menor que o nascimento, nao fez aniversario ainda;  
-        if(mesAtual < mesNasc){
-            idade--; 
-        } else {
-        //Se estiver no mes do nascimento, verificar o dia
-        if(mesAtual == mesNasc){ 
-            if(new Date().getDate() < diaNasc ){ 
-            //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
-            idade--; 
+        let dataAtual = new Date();
+        let anoAtual = dataAtual.getFullYear();
+        let anoNascParts = dataNasc.split('-');
+        let diaNasc =anoNascParts[2];
+        let mesNasc =anoNascParts[1];
+        let anoNasc =anoNascParts[0];
+        let idade = anoAtual - anoNasc;
+        let mesAtual = dataAtual.getMonth() + 1; 
+        
+            //Se mes atual for menor que o nascimento, nao fez aniversario ainda;  
+            if(mesAtual < mesNasc){
+                idade--; 
+            } else {
+            //Se estiver no mes do nascimento, verificar o dia
+            if(mesAtual == mesNasc){ 
+                if(new Date().getDate() < diaNasc ){ 
+                //Se a data atual for menor que o dia de nascimento ele ainda nao fez aniversario
+                idade--; 
+                }
             }
-        }
-    } return idade; 
+        } return idade; 
+    },
+
+    // Gerar ID de inscrição
+    inscID() {
+        let numid =  Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300;
+        return numid;
+    },
+
+    // adicionar loading do botão
+    addLoading() {
+        btnCon.innerHTML = '<img src="../assets/img/load-icon-png-27.png" class="loading">';
+        return;
+    },
+
+    // remover loading do botão
+    removeLoading() {
+        btnCon.innerHTML = 'Concluir Inscrição'
+        return;
+    }
+
 }
+
 
 // Mostrar arquivo selecionado do input file
 Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), function (button) {
@@ -80,51 +102,38 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
     })
 })
 
-// Gerar ID de inscrição
-const inscID = () => 
-Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300
-
-
-btnCon.addEventListener('click', showMe);
+// const inscricoes = {
+//     getValues() {
+//         return {
+//             nome: nome.value,
+//             nascimento: `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
+//             telefone: tel.value,
+//             email: email.value,
+//             localidade: local.value,
+//             autorizacao: textFile.textContent,
+//             modalidadePagamento: modalPag.value,
+//             formaPagamento: formPag.value,
+//             inscricaoID: `0000${inscID()}`
+//         }
+//     }
+// }
 
 // Chamar valores dos inputs
 function showMe() {
 
 
-    console.log(nome.value);
-    console.log(`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
-    console.log(tel.value);
-    console.log(email.value);
-    console.log(local.value);
-    console.log(textFile.textContent);
-    console.log(modalPag.value);
-    console.log(formPag.value);
-    console.log(`0000${inscID()}`)
-    
-    localStorage.setItem('nome', nome.value);
-    localStorage.setItem('nascimento', `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`);
-    localStorage.setItem('telefone', tel.value);
-    localStorage.setItem('email', email.value);
-    localStorage.setItem('localidade', local.value);
-    localStorage.setItem('autorizacao', textFile.textContent);
-    localStorage.setItem('modalidade-pagamento', modalPag.value);
-    localStorage.setItem('forma-pagamento', formPag.value);
-    localStorage.setItem('inscricao-ID', `0000${inscID()}`);
+    console.log(`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`);
+    console.log(Utils.inscID());
+
+    // localStorage.setItem(inscricoes.getValues);
 
 }
 
-// adicinar e remover loading do botão
-const addLoading = () => {
-    btnCon.innerHTML = '<img src="../assets/img/load-icon-png-27.png" class="loading">'
-}
-const removeLoading = () => {
-    btnCon.innerHTML = 'Concluir Inscrição'
-}
 
 // Enviar dados para planilha
 const handleSubmit = (event) => {
     event.preventDefault();
-    addLoading();
+    Utils.addLoading();
 
     fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
 
@@ -134,17 +143,18 @@ const handleSubmit = (event) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            id: localStorage.getItem('inscricao-ID'),
-            name: nome.value,
-            idade:`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
-            telefone: tel.value,
-            email: email.value,
-            Localidade: local.value,
-            autorizacao: textFile.textContent,
-            modalidade: modalPag.value,
-            forma: formPag.value,
+            // id: localStorage.getItem('inscricao-ID'),
+            // name: nome.value,
+            // idade:`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
+            // telefone: tel.value,
+            // email: email.value,
+            // Localidade: local.value,
+            // autorizacao: textFile.textContent,
+            // modalidade: modalPag.value,
+            // forma: formPag.value,
         })
-    }).then(() => removeLoading())
+    }).then(() => Utils.removeLoading())
 }
 
 Form.addEventListener('submit', handleSubmit);
+btnCon.addEventListener('click', showMe);

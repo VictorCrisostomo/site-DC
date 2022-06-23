@@ -19,16 +19,13 @@ const formPagConf = document.querySelector('#form-pag')
 const btnWhats = document.querySelector('#btn-whats');
 
 
-// nomeData.innerHTML= sessionStorage.getItem('nome')
-
 btnWhats.addEventListener('click', showMe);
 
 // // Chamar valores dos inputs
 function showMe() {
 
-    const Name = localStorage.getItem('nome')
     const spliceName = localStorage.getItem('nome').split(' ')
-    const firstName = Name.split(' ', 1)
+    const firstName = spliceName[0]
     const lastName = spliceName.slice(1).join(' ')
 
 
