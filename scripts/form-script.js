@@ -23,14 +23,13 @@ const pagMao = document.querySelector('#pag-mao');
 
 const btnCon = document.querySelector('#btn-concluir');
 
-
+// ultilitarios para organização do formulario
 const Utils = {
     // converter data americana para data brasileira
     editData(dataBr) {
         let data = dataBr.split('-').reverse().join('/')
             return data
     },
-
     // Calcular idade
     calculaIdade(dataNasc){ 
 
@@ -56,27 +55,27 @@ const Utils = {
             }
         } return idade; 
     },
+    // formatar nascimento
+    formataData(nascVal) {
+        return  `${Utils.editData(nascVal)} | ${Utils.calculaIdade(nascVal)} anos`
 
+    } ,
     // Gerar ID de inscrição
     inscID() {
         let numid =  Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300;
         return numid;
     },
-
     // adicionar loading do botão
     addLoading() {
         btnCon.innerHTML = '<img src="../assets/img/load-icon-png-27.png" class="loading">';
         return;
     },
-
     // remover loading do botão
     removeLoading() {
         btnCon.innerHTML = 'Concluir Inscrição'
         return;
     }
-
 }
-
 
 // Mostrar arquivo selecionado do input file
 Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), function (button) {
@@ -102,28 +101,75 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
     })
 })
 
-// const inscricoes = {
-//     getValues() {
-//         return {
-//             nome: nome.value,
-//             nascimento: `${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
-//             telefone: tel.value,
-//             email: email.value,
-//             localidade: local.value,
-//             autorizacao: textFile.textContent,
-//             modalidadePagamento: modalPag.value,
-//             formaPagamento: formPag.value,
-//             inscricaoID: `0000${inscID()}`
-//         }
-//     }
-// }
+const InputsForm = {
+    nome: nome,
+    nascimento: nascimento,
+    telefone: tel,
+    email: email,
+    localidade: local,
+    modalidade: modalPag,
+    forma: formPag,
+
+    pegarValores() {
+        return {
+            nome: InputsForm.nome.value,
+            nascimento: InputsForm.nascimento.value,
+            telefone: InputsForm.telefone.value,
+            email: InputsForm.email.value,
+            textInput: textFile.textContent,
+            localidade: InputsForm.localidade.value,
+            modalidade: InputsForm.modalidade.value,
+            forma: InputsForm.forma.value,
+            inscID: Utils.inscID()
+        }
+    },
+
+    validarCampos() {
+        const {nome, nascimento,telefone, email, localidade, modalidade, forma} = InputsForm.pegarValores()
+
+        if (
+        nome.trim() === "" ||
+        nascimento.trim() === "" ||
+        telefone.trim() === "" ||
+        email.trim() === "" ||
+        localidade.trim() === "" ||
+        modalidade.trim() === "" ||
+        forma.trim() === "") {
+            throw new Error("Preencha todos os campos")
+        }
+    },
+
+    formatarValores() {
+        let {nome, nascimento, telefone, email, textInput, localidade, modalidade, forma, inscID} = InputsForm.pegarValores()
+
+        nascimento = Utils.formataData(nascimento);
+        return {
+            nome,
+            nascimento,
+            telefone,
+            email,
+            textInput,
+            localidade,
+            modalidade,
+            forma,
+            inscID
+        }
+
+
+    }
+
+}
+
+
 
 // Chamar valores dos inputs
 function showMe() {
 
 
-    console.log(`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`);
-    console.log(Utils.inscID());
+
+
+    // console.log(`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`);
+    // console.log(Utils.inscID());
 
     // localStorage.setItem(inscricoes.getValues);
 
@@ -135,6 +181,13 @@ const handleSubmit = (event) => {
     event.preventDefault();
     Utils.addLoading();
 
+    try{
+        const inscricao = InputsForm.formatarValores();
+
+    } catch(error) {
+        alert(error)
+    }
+
     fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
 
         method: 'post',
@@ -145,7 +198,7 @@ const handleSubmit = (event) => {
         body: JSON.stringify({
             // id: localStorage.getItem('inscricao-ID'),
             // name: nome.value,
-            // idade:`${editData(nascimento.value)} | ${calculaIdade(nascimento.value)} anos`,
+            // idade:`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`,
             // telefone: tel.value,
             // email: email.value,
             // Localidade: local.value,
@@ -155,6 +208,7 @@ const handleSubmit = (event) => {
         })
     }).then(() => Utils.removeLoading())
 }
-
+// btnCon.addEventListener('click', showMe);
 Form.addEventListener('submit', handleSubmit);
-btnCon.addEventListener('click', showMe);
+
+// 2:33:50
