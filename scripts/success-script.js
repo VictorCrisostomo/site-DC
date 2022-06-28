@@ -19,33 +19,36 @@ const formPagConf = document.querySelector('#form-pag')
 const btnWhats = document.querySelector('#btn-whats');
 
 
-btnWhats.addEventListener('click', showMe);
+// pegar inputs para o localSotorage
+const Store = {
+    // pegar os valores do localStorage
+    get () {
+        return JSON.parse(localStorage.getItem('inscricao')) || []
+    }
+}
 
-// // Chamar valores dos inputs
-function showMe() {
 
-    const spliceName = localStorage.getItem('nome').split(' ')
+
+    const spliceName = Store.get().nome.split(' ')
     const firstName = spliceName[0]
     const lastName = spliceName.slice(1).join(' ')
 
 
     //  campos de conferencia
-    nomeConf.innerHTML= localStorage.getItem('nome');
-    nascConf.innerHTML= localStorage.getItem('nascimento');
-    localConf.innerHTML= localStorage.getItem('localidade');
-    telConf.innerHTML= localStorage.getItem('telefone');
-    emailConf.innerHTML= localStorage.getItem('email');
-    autorConf.innerHTML= localStorage.getItem('autorizacao');
-    modalPagConf.innerHTML= localStorage.getItem('modalidade-pagamento');
-    formPagConf.innerHTML= localStorage.getItem('forma-pagamento');
+    nomeConf.innerHTML= Store.get().nome;
+    nascConf.innerHTML= Store.get().nascimento;
+    localConf.innerHTML= Store.get().localidade;
+    telConf.innerHTML= Store.get().telefone;
+    emailConf.innerHTML= Store.get().email;
+    autorConf.innerHTML= Store.get().textInput;
+    modalPagConf.innerHTML= Store.get().modalidade;
+    formPagConf.innerHTML= Store.get().forma;
 
     // campos do overlay
     nomeData.innerHTML= firstName;
     segNomeData.innerHTML= lastName;
-    origemData.innerHTML= localStorage.getItem('localidade');
-    numInscData.innerHTML= `Nº ${localStorage.getItem('inscricao-ID')}`;
+    origemData.innerHTML= Store.get().localidade;
+    numInscData.innerHTML= `Nº 0000${Store.get().inscID}`;
 
-
-}
 
 console.log('Cheguei Papai!!!')

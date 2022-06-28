@@ -72,7 +72,7 @@ const Utils = {
     },
     // remover loading do botão
     removeLoading() {
-        btnCon.innerHTML = 'Concluir Inscrição'
+        window.location = "../pages/tela-de-sucesso.html"
         return;
     }
 }
@@ -158,39 +158,57 @@ const InputsForm = {
     }
 }
 
+// enviar/pegar inputs para o localSotorage
+const Store = {
+    // enviar valores para localStorage
+    set (valores) {
+        localStorage.setItem('inscricao', JSON.stringify(valores));
+    },
+    // pega os valores do localStorage
+    get () {
+        return JSON.parse(localStorage.getItem('inscricao')) || []
+    }
+}
+
 // Enviar dados para localStorage e planilha
 const handleSubmit = (event) => {
     event.preventDefault();
-    Utils.addLoading();
+    // Utils.addLoading();
 
     try{
+        Utils.addLoading();
+
+        // enviar teste de validacao
         InputsForm.validarCampos()
-        localStorage.setItem('inscricao', JSON.stringify(InputsForm.formatarValores()))
+
+        //  enviar valores capturados
+        Store.set(InputsForm.formatarValores())
+
+        //  enviar dados para planilha 
+        fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
+
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: Store.get().inscID,
+                name: Store.get().nome,
+                idade: Store.get().nascimento,
+                telefone: Store.get().telefone,
+                email: Store.get().email,
+                Localidade: Store.get().localidade,
+                modalidade: Store.get().modalidade,
+                forma: Store.get().forma,
+                autorizacao: Store.get().textInput,
+            })
+        }).then(() => Utils.removeLoading())
 
     } catch(error) {
         alert(error.message);
     }
 
-
-    fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
-
-        method: 'post',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            id: localStorage.getItem('inscricao-ID'),
-            name: nome.value,
-            idade:`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`,
-            telefone: tel.value,
-            email: email.value,
-            Localidade: local.value,
-            autorizacao: textFile.textContent,
-            modalidade: modalPag.value,
-            forma: formPag.value,
-        })
-    }).then(() => Utils.removeLoading())
 }
 
 Form.addEventListener('submit', handleSubmit);
