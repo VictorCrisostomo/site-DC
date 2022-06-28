@@ -101,6 +101,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
     })
 })
 
+// pegar valores do input
 const InputsForm = {
     nome: nome,
     nascimento: nascimento,
@@ -141,8 +142,8 @@ const InputsForm = {
 
     formatarValores() {
         let {nome, nascimento, telefone, email, textInput, localidade, modalidade, forma, inscID} = InputsForm.pegarValores()
-
         nascimento = Utils.formataData(nascimento);
+        
         return {
             nome,
             nascimento,
@@ -154,39 +155,22 @@ const InputsForm = {
             forma,
             inscID
         }
-
-
     }
-
 }
 
-
-
-// Chamar valores dos inputs
-function showMe() {
-
-
-
-
-    // console.log(`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`);
-    // console.log(Utils.inscID());
-
-    // localStorage.setItem(inscricoes.getValues);
-
-}
-
-
-// Enviar dados para planilha
+// Enviar dados para localStorage e planilha
 const handleSubmit = (event) => {
     event.preventDefault();
     Utils.addLoading();
 
     try{
-        const inscricao = InputsForm.formatarValores();
+        InputsForm.validarCampos()
+        localStorage.setItem('inscricao', JSON.stringify(InputsForm.formatarValores()))
 
     } catch(error) {
-        alert(error)
+        alert(error.message);
     }
+
 
     fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
 
@@ -196,19 +180,17 @@ const handleSubmit = (event) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            // id: localStorage.getItem('inscricao-ID'),
-            // name: nome.value,
-            // idade:`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`,
-            // telefone: tel.value,
-            // email: email.value,
-            // Localidade: local.value,
-            // autorizacao: textFile.textContent,
-            // modalidade: modalPag.value,
-            // forma: formPag.value,
+            id: localStorage.getItem('inscricao-ID'),
+            name: nome.value,
+            idade:`${Utils.editData(nascimento.value)} | ${Utils.calculaIdade(nascimento.value)} anos`,
+            telefone: tel.value,
+            email: email.value,
+            Localidade: local.value,
+            autorizacao: textFile.textContent,
+            modalidade: modalPag.value,
+            forma: formPag.value,
         })
     }).then(() => Utils.removeLoading())
 }
-// btnCon.addEventListener('click', showMe);
-Form.addEventListener('submit', handleSubmit);
 
-// 2:33:50
+Form.addEventListener('submit', handleSubmit);
