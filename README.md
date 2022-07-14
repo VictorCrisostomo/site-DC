@@ -33,7 +33,7 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [ ] Capturar arquivo do `input file`;
 - [x] Salvar Valores no LocalStorage;
 - [x] Enviar Valores do LocalStorage para Banco de Dados;
-- [ ] Enviar inscrição individual para email usando `Nodemailer`;
+- [x] Enviar inscrição individual para email usando `Nodemailer`;
 - [ ] Enviar arquivo capturado pelo `input file` para email usando `Nodemailer`;
 - [x] Capturar Valores do LocalStorage para confirmação de dados da `Tela de sucesso`;
 - [ ] Capturar Valores do LocalStorage para `Overlay` da `Tela de sucesso`;
