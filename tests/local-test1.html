@@ -11,6 +11,7 @@
         <h2>Page 1</h2>
     </div>
     <div>
+        <input type="file" id="avatar" name="avatar">
         <input type="text" value="" id="inputText">
         <input type="button" id="inputButton" value="Salvar valor na session storoge">
     </div>
@@ -19,7 +20,11 @@
 
         btn.addEventListener("click", function () {
             var text = document.querySelector("#inputText").value;
+            var file = document.querySelector("#avatar").value;
             localStorage.setItem('valueText', text);
+            localStorage.setItem('fileval', file);
+
+            console.log(file)
         })
     </script>
 </body>

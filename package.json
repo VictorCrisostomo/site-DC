@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/VictorCrisostomo/site-DC/issues"
   },
-  "homepage": "https://github.com/VictorCrisostomo/site-DC#readme"
+  "homepage": "https://github.com/VictorCrisostomo/site-DC#readme",
+  "dependencies": {
+    "nodemailer": "^6.7.7"
+  }
 }
