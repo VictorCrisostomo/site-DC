@@ -19,6 +19,7 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - `Bootstrap`;
 - `Foundation for Emails 2`;
 - `Nodemailer`;
+- `Handlebars`
 
 # Tasks
 
