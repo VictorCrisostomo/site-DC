@@ -23,6 +23,7 @@ const pagMao = document.querySelector('#pag-mao');
 
 const btnCon = document.querySelector('#btn-concluir');
 
+
 // ultilitarios para organização do formulario
 const Utils = {
     // converter data americana para data brasileira
@@ -60,6 +61,13 @@ const Utils = {
         return  `${Utils.editData(nascVal)} | ${Utils.calculaIdade(nascVal)} anos`
 
     } ,
+    // capturar texto do arquivo
+    capturarTextFile() {
+        realFile.addEventListener('change', function(){
+            console.log(this.files[0].name)
+            textFile.textContent = this.files[0].name;
+        })
+    },
     // Gerar ID de inscrição
     inscID() {
         let numid =  Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300;
@@ -78,28 +86,7 @@ const Utils = {
 }
 
 // Mostrar arquivo selecionado do input file
-Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), function (button) {
-    const hiddenInput = button.parentElement.querySelector('.file-upload__input');
-    const label = button.parentElement.querySelector('.file-upload__label');
-    const defaultLabelText = 'Nenhum arquivo selecionado.';
-
-    // Set default text for label
-    label.textContent = defaultLabelText;
-    label.title = defaultLabelText;
-
-    button.addEventListener('click', function () {
-        hiddenInput.click();
-    })
-
-    hiddenInput.addEventListener('change', function () {
-        const filenameList = Array.prototype.map.call(hiddenInput.files, function (file) {
-            return file.name
-        })
-
-        label.textContent = filenameList.join() || defaultLabelText;
-        label.title = label.textContent;
-    })
-})
+Utils.capturarTextFile()
 
 // pegar valores do input
 const InputsForm = {
@@ -185,7 +172,7 @@ const handleSubmit = (event) => {
         Store.set(InputsForm.formatarValores())
 
         //  enviar dados para planilha 
-        fetch('https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV', {
+        fetch(`https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV`, {
 
             method: 'post',
             headers: {
