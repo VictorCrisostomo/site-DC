@@ -60,12 +60,17 @@ const Utils = {
     formataData(nascVal) {
         return  `${Utils.editData(nascVal)} | ${Utils.calculaIdade(nascVal)} anos`
 
-    } ,
-    // capturar texto do arquivo
-    capturarTextFile() {
+    },
+    // capturar arquivo de autoriação
+    capturarFile() {
         realFile.addEventListener('change', function(){
-            console.log(this.files[0].name)
             textFile.textContent = this.files[0].name;
+
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                 console.log(reader.result)
+            });
+            reader.readAsDataURL(this.files[0])
         })
     },
     // Gerar ID de inscrição
@@ -75,7 +80,7 @@ const Utils = {
     },
     // adicionar loading do botão
     addLoading() {
-        btnCon.innerHTML = '<img src="../assets/img/load-icon-png-27.png" class="loading">';
+        btnCon.innerHTML = '<img src="../img/load-icon-png-27.png" class="loading">';
         return;
     },
     // remover loading do botão
@@ -86,7 +91,7 @@ const Utils = {
 }
 
 // Mostrar arquivo selecionado do input file
-Utils.capturarTextFile()
+console.log(Utils.capturarFile())
 
 // pegar valores do input
 const InputsForm = {
@@ -108,7 +113,7 @@ const InputsForm = {
             localidade: InputsForm.localidade.value,
             modalidade: InputsForm.modalidade.value,
             forma: InputsForm.forma.value,
-            inscID: Utils.inscID()
+            inscID: Utils.inscID(),
         }
     },
 
@@ -130,6 +135,7 @@ const InputsForm = {
     formatarValores() {
         let {nome, nascimento, telefone, email, textInput, localidade, modalidade, forma, inscID} = InputsForm.pegarValores()
         nascimento = Utils.formataData(nascimento);
+
         
         return {
             nome,
@@ -142,6 +148,47 @@ const InputsForm = {
             forma,
             inscID
         }
+    }
+}
+
+const Send = {
+    // config de dados para planilha
+    planilha() {
+        fetch(`https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV`, {
+
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: Store.get().inscID,
+                name: Store.get().nome,
+                idade: Store.get().nascimento,
+                telefone: Store.get().telefone,
+                email: Store.get().email,
+                Localidade: Store.get().localidade,
+                modalidade: Store.get().modalidade,
+                forma: Store.get().forma,
+                autorizacao: Store.get().textInput,
+            })
+         }).then(() => Utils.removeLoading())
+    },
+    // config de dados para email
+    mail() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '/')
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+            if(xhr.responseText === 'success') {
+                alert('email sent')
+            } else {
+                alert('algo deu errado papai!')
+            }
+        }
+
+        xhr.send(JSON.stringify(InputsForm.formatarValores()))
     }
 }
 
@@ -164,33 +211,14 @@ const handleSubmit = (event) => {
 
     try{
         Utils.addLoading();
-
         // enviar teste de validacao
-        InputsForm.validarCampos()
-
-        //  enviar valores capturados
-        Store.set(InputsForm.formatarValores())
-
-        //  enviar dados para planilha 
-        fetch(`https://api.sheetmonkey.io/form/s5LdYdyD5GRvwMaoRBA2sV`, {
-
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: Store.get().inscID,
-                name: Store.get().nome,
-                idade: Store.get().nascimento,
-                telefone: Store.get().telefone,
-                email: Store.get().email,
-                Localidade: Store.get().localidade,
-                modalidade: Store.get().modalidade,
-                forma: Store.get().forma,
-                autorizacao: Store.get().textInput,
-            })
-        }).then(() => Utils.removeLoading())
+        InputsForm.validarCampos();
+        // enviar valores capturados
+        Store.set(InputsForm.formatarValores());
+        // enviar dados para planilha 
+        Send.planilha();
+        // enviar dados para planilha 
+        Send.mail();
 
     } catch(error) {
         alert(error.message);
