@@ -4,11 +4,11 @@
 Formulario de inscrição com envio de dados para planilha, email e tela de verificação.
 
 <p align="center">
-    <img alt="desktop-print" src="./assets/img/desktop-print.png" width="80%">
+    <img alt="desktop-print" src="./public/img/desktop-print.png" width="80%">
 </p>
 <br>
 <p align="center">
-    <img alt="mobile-print" src="./assets/img/mobile-print.png" width="50%">
+    <img alt="mobile-print" src="./public/img/mobile-print.png" width="50%">
 </p>
 
 # Tecnologias
