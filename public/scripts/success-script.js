@@ -18,7 +18,6 @@ const formPagConf = document.querySelector('#form-pag')
 
 const btnWhats = document.querySelector('#btn-whats');
 
-
 // pegar inputs para o localSotorage
 const Store = {
     // pegar os valores do localStorage
@@ -27,28 +26,54 @@ const Store = {
     }
 }
 
+const captVal = {
+    nome: Store.get().nome,
+    nascimento: Store.get().nascimento,
+    localidade: Store.get().localidade,
+    telefone: Store.get().telefone,
+    email: Store.get().email,
+    autorizacao: Store.get().textInput,
+    modalidade: Store.get().modalidade,
+    forma: Store.get().forma,
+    ID: Store.get().inscID
+}
 
+const Overlay = {
+        
+    spliceName: captVal.nome.split(' '),
 
-    const spliceName = Store.get().nome.split(' ')
-    const firstName = spliceName[0]
-    const lastName = spliceName.slice(1).join(' ')
-
+    firstName() {
+        let nome = this.spliceName[0];
+        return nome.toUpperCase();
+    },
+    lastName() {
+        let segundoNome = this.spliceName.slice(1).join(' ')
+        return segundoNome.toUpperCase();
+    },
+    location() {
+        let local = captVal.localidade.toUpperCase();
+        return local;
+    },
+    numId() {
+        return `Nº 0000${captVal.ID}`
+    }
+}
 
     //  campos de conferencia
-    nomeConf.innerHTML= Store.get().nome;
-    nascConf.innerHTML= Store.get().nascimento;
-    localConf.innerHTML= Store.get().localidade;
-    telConf.innerHTML= Store.get().telefone;
-    emailConf.innerHTML= Store.get().email;
-    autorConf.innerHTML= Store.get().textInput;
-    modalPagConf.innerHTML= Store.get().modalidade;
-    formPagConf.innerHTML= Store.get().forma;
+    nomeConf.innerHTML= captVal.nome;
+    nascConf.innerHTML= captVal.nascimento;
+    localConf.innerHTML= captVal.localidade;
+    telConf.innerHTML= captVal.telefone;
+    emailConf.innerHTML= captVal.email;
+    autorConf.innerHTML= captVal.autorizacao;
+    modalPagConf.innerHTML= captVal.modalidade;
+    formPagConf.innerHTML= captVal.forma;
 
     // campos do overlay
-    nomeData.innerHTML= firstName;
-    segNomeData.innerHTML= lastName;
-    origemData.innerHTML= Store.get().localidade;
-    numInscData.innerHTML= `Nº 0000${Store.get().inscID}`;
+    nomeData.innerHTML= Overlay.firstName();
+    segNomeData.innerHTML= Overlay.lastName();
+    origemData.innerHTML= Overlay.location();
+    numInscData.innerHTML= Overlay.numId();
 
 
 console.log('Cheguei Papai!!!')

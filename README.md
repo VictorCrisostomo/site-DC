@@ -40,7 +40,7 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [ ] Enviar arquivo capturado pelo `input file` para email usando `Nodemailer`;
 - [x] Capturar Valores do LocalStorage para confirmação de dados da `Tela de sucesso`;
 - [x] Capturar Valores do LocalStorage para `Overlay` da `Tela de sucesso`;
-- [ ] Colocar em caixa alta os valores do overlay;
+- [x] Colocar em caixa alta os valores do overlay;
 - [ ] Converter o `Overlay` de `SVG` para `PNG`;
 - [ ] Tirar print do `Overlay`;
 - [ ] fazer download do `Overlay`;
