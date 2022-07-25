@@ -48,9 +48,10 @@ app.post('/', (req, res) => {
   let mailOptions = {
       from: `Victor Crisóstomo <${emailUser}>`,
       to: emailTo,
-      subject: `✅ Nova isncrição | ${req.body.nome} `,
+      subject: `✅ Nova inscrição - ${req.body.inscID} | ${req.body.nome} `,
       template: 'main',
       context: {
+        inscID: req.body.inscID,
         nome: req.body.nome,
         nascimento: req.body.nascimento,
         localidade: req.body.localidade,

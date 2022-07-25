@@ -23,7 +23,6 @@ const pagMao = document.querySelector('#pag-mao');
 
 const btnCon = document.querySelector('#btn-concluir');
 
-
 // ultilitarios para organização do formulario
 const Utils = {
     // converter data americana para data brasileira
@@ -128,7 +127,9 @@ const InputsForm = {
         localidade.trim() === "" ||
         modalidade.trim() === "" ||
         forma.trim() === "") {
-            throw new Error("Preencha todos os campos")
+            document.querySelector('body').innerHTML = `<div class="alert alert-danger" role="alert">
+            Por favor, preencha todos os campos.
+          </div>`
         }
     },
 
@@ -188,7 +189,7 @@ const Send = {
             }
         }
 
-        xhr.send(JSON.stringify(InputsForm.formatarValores()))
+        xhr.send(JSON.stringify(Store.get()))
     }
 }
 
@@ -223,7 +224,6 @@ const handleSubmit = (event) => {
     } catch(error) {
         alert(error.message);
     }
-
 }
 
 Form.addEventListener('submit', handleSubmit);

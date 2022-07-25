@@ -29,32 +29,32 @@
                 <section class="col-12 col-md-11">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" autocomplete="off" required>
                         <label for="nome" class="form-label">Nome</label>
                     </div>
                     <div class="row align-items-center" id="min-inputs">
                         <div class="col-12 col-md-6 form-floating mb-3">
-                            <input type="date" class="form-control" id="nascimento" placeholder="Data de nascimento" name="nascimento">
+                            <input type="date" class="form-control" id="nascimento" placeholder="Data de nascimento" name="nascimento" autocomplete="off" required>
                             <label for="nascimento" class="form-label">Data de nascimento</label>
                         </div>
                         <div class="col-12 col-md-6 form-floating mb-3">
-                            <input type="tel" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
+                            <input type="tel" class="form-control" id="telefone" placeholder="Telefone" name="telefone" autocomplete="off" required>
                             <label for="telefone" class="form-label">Telefone</label>
                         </div>
 
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="email" name="email" autocomplete="off">
                         <label for="email" class="form-label">email</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="localidade" placeholder="localidade" name="localidade">
+                        <input type="text" class="form-control" id="localidade" placeholder="localidade" name="localidade" autocomplete="off" required>
                         <label for="localidade" class="form-label">Localidade</label>
                     </div>
 
                     <div class="mb-3 file-upload" id="autor-area">
                         <h6>Enviar Autorização Pastoral Assinada</h6>
-                        <input type="file" class="form-control" id="real-file" name="autorizacao">
+                        <input type="file" class="form-control" id="real-file" name="upload">
                         <label for="real-file" class="form-label">
                             <span class="btn btn-outline-secondary" id="btn-file">Selecione o arquivo</span>
                             <span id="text-file">Nenhum arquivo selecionado</span>
@@ -65,7 +65,7 @@
             
                     <h6>Modalidade de Pagamento</h6>
                     <div class="mb-3">
-                        <select class="form-select" id="modal-pag" name="modalidade-pagamento">
+                        <select class="form-select" id="modal-pag" name="modalidade-pagamento" required>
                             <option selected disabled value="">Informe a modalidade de pagamento</option>
                             <option id="adulto">Inteira R$ 250,00 (adulto)</option>
                             <option id="crianca">Meia R$ 125,00 (crianças 06 a 11 anos)</option>
@@ -74,7 +74,7 @@
 
                         <h6>Forma de Pagamento</h6>
                     <div class="mb-5">
-                        <select class="form-select" id="form-pag" name="forma-pagamento">
+                        <select class="form-select" id="form-pag" name="forma-pagamento" required>
                             <option selected disabled value="">Informe a forma de pagamento</option>
                             <option id="pix">PIX</option>
                             <option id="credito">Cartão de credito</option>
@@ -85,7 +85,6 @@
                         <button type="submit" class="btn btn-form" id="btn-concluir" value="Finalizar inscrição">
                             Concluir Inscrição
                         </button>     
-                        <!-- <a class="btn btn-form" id="btn-concluir" href="./tela-de-sucesso.html">Finalizar inscrição</a>      -->
                     </div>
                 </section>
             </form>

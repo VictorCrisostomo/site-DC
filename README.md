@@ -19,7 +19,8 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - `Bootstrap`;
 - `Foundation for Emails 2`;
 - `Nodemailer`;
-- `Handlebars`
+- `express`
+- `Handlebars`;
 
 # Tasks
 
@@ -28,16 +29,17 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [x] Criar `tela de sucesso` para confirmação do usuário;
 - [x] Criar `Overlay` para bilhete individual;
 - [x] Capturar valores dos Inputs com JS;
-- [ ] Validar para ver se os campos estão vazios;
+- [x] Validar para ver se os campos estão vazios;
 - [x] Configurar Data;
 - [x] Capturar nome do `input file`;
 - [ ] Capturar arquivo do `input file`;
 - [x] Salvar Valores no LocalStorage;
 - [x] Enviar Valores do LocalStorage para Banco de Dados;
+- [x] Configurar `express`;
 - [x] Enviar inscrição individual para email usando `Nodemailer`;
 - [ ] Enviar arquivo capturado pelo `input file` para email usando `Nodemailer`;
 - [x] Capturar Valores do LocalStorage para confirmação de dados da `Tela de sucesso`;
-- [ ] Capturar Valores do LocalStorage para `Overlay` da `Tela de sucesso`;
+- [x] Capturar Valores do LocalStorage para `Overlay` da `Tela de sucesso`;
 - [ ] Colocar em caixa alta os valores do overlay;
 - [ ] Converter o `Overlay` de `SVG` para `PNG`;
 - [ ] Tirar print do `Overlay`;
