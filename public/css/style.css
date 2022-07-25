@@ -259,7 +259,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-bottom: 36px;
     font-size: 12px;
 }
-
+#link-down {
+    text-align: right;
+}
 
 #pass-container{
     position: relative;
@@ -275,25 +277,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     font-size: 14px;
 }
 
-
-#btn-down{
-    border: none;
-    background-color: #ED8E53;
-    color: #FFF;
-
-    margin: 15px 0 20px 0;
-
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-}
-#btn-down:focus{
-    box-shadow: none;
-}
-#btn-down:hover{
-    background-color: #eb7831;
-}
-
 #btn-pagamento {
     margin-bottom: 25px;
 }
@@ -303,11 +286,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -13%;
+        margin-top: -17%;
     }
     
     #btn-act{
-        margin-top: -13%;
+        margin-top: -17%;
     }
 }
 
@@ -316,11 +299,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -25%;
+        margin-top: -30%;
     }
     
     #btn-act{
-        margin-top: -25%;
+        margin-top: -30%;
     }
 }
 

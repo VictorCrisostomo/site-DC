@@ -1,11 +1,13 @@
 'use strict';
 
 // campos do overlay
+const svg = document.querySelector('#svg')
 const nomeData = document.querySelector('#nome-data');
 const segNomeData = document.querySelector('#segundo-nome-data');
 const origemData = document.querySelector('#origem-data');
 const numInscData = document.querySelector('#num-insc-data');
 
+const btnDown = document.querySelector('#btn-down')
 // campos da conferencia de dados
 const nomeConf = document.querySelector('#nome-conf');
 const nascConf = document.querySelector('#nascimento-conf');
@@ -20,7 +22,6 @@ const btnWhats = document.querySelector('#btn-whats');
 
 // pegar inputs para o localSotorage
 const Store = {
-    // pegar os valores do localStorage
     get () {
         return JSON.parse(localStorage.getItem('inscricao')) || []
     }
@@ -74,6 +75,21 @@ const Overlay = {
     segNomeData.innerHTML= Overlay.lastName();
     origemData.innerHTML= Overlay.location();
     numInscData.innerHTML= Overlay.numId();
+
+const {x, y, width, height} = svg.viewBox.baseVal;
+const blob = new Blob([svg.outerHTML], {type: 'image/svg+xml'});
+const url = URL.createObjectURL(blob);
+const image = document.createElement('img');
+image.src =  url;
+image.addEventListener('load', () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+    context.drawImage(image, x, y, width, height);
+    btnDown.href = canvas.toDataURL();
+    URL.revokeObjectURL(url);
+})
 
 
 console.log('Cheguei Papai!!!')

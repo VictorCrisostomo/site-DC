@@ -41,9 +41,9 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [x] Capturar Valores do LocalStorage para confirmação de dados da `Tela de sucesso`;
 - [x] Capturar Valores do LocalStorage para `Overlay` da `Tela de sucesso`;
 - [x] Colocar em caixa alta os valores do overlay;
-- [ ] Converter o `Overlay` de `SVG` para `PNG`;
-- [ ] Tirar print do `Overlay`;
-- [ ] fazer download do `Overlay`;
+- [x] Converter o `Overlay` de `SVG` para `PNG`;
+- [x] Tirar print do `Overlay`;
+- [x] fazer download do `Overlay`;
 - [ ] Direcionar o usuario para o pagamento conforme o selecionado pelo mesmo;
 - [ ] Criar botão de `Nova Inscrição` resetando o LocalStorage;
 - [ ] Verificar todos os `Links de Whatsapp`;
