@@ -152,6 +152,18 @@ const InputsForm = {
     }
 }
 
+// enviar/pegar inputs para o localSotorage
+const Store = {
+    // enviar valores para localStorage
+    set (valores) {
+        localStorage.setItem('inscricao', JSON.stringify(valores));
+    },
+    // pega os valores do localStorage
+    get () {
+        return JSON.parse(localStorage.getItem('inscricao')) || []
+    }
+}
+
 const Send = {
     // config de dados para planilha
     planilha() {
@@ -190,18 +202,6 @@ const Send = {
         }
 
         xhr.send(JSON.stringify(Store.get()))
-    }
-}
-
-// enviar/pegar inputs para o localSotorage
-const Store = {
-    // enviar valores para localStorage
-    set (valores) {
-        localStorage.setItem('inscricao', JSON.stringify(valores));
-    },
-    // pega os valores do localStorage
-    get () {
-        return JSON.parse(localStorage.getItem('inscricao')) || []
     }
 }
 

@@ -8,6 +8,7 @@ const origemData = document.querySelector('#origem-data');
 const numInscData = document.querySelector('#num-insc-data');
 
 const btnDown = document.querySelector('#btn-down')
+
 // campos da conferencia de dados
 const nomeConf = document.querySelector('#nome-conf');
 const nascConf = document.querySelector('#nascimento-conf');
@@ -18,6 +19,9 @@ const autorConf = document.querySelector('#autor-conf');
 const modalPagConf = document.querySelector('#modal-conf');
 const formPagConf = document.querySelector('#form-pag')
 
+const formPG = document.querySelector('#form-PG')
+
+const btnPag = document.querySelector('#btn-pagamento');
 const btnWhats = document.querySelector('#btn-whats');
 
 // pegar inputs para o localSotorage
@@ -60,6 +64,20 @@ const Overlay = {
     }
 }
 
+const Pagmento = {
+    forma() {
+        let form = captVal.forma;
+
+        if (form === "PIX") {
+            formPG.innerHTML= form;
+        } else if (form === "Cartão de credito") {
+            formPG.innerHTML= form;
+        } else {
+            formPG.innerHTML= form
+        }
+    }
+}
+
     //  campos de conferencia
     nomeConf.innerHTML= captVal.nome;
     nascConf.innerHTML= captVal.nascimento;
@@ -91,5 +109,5 @@ image.addEventListener('load', () => {
     URL.revokeObjectURL(url);
 })
 
-
+Pagmento.forma()
 console.log('Cheguei Papai!!!')
