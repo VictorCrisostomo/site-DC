@@ -11,6 +11,10 @@ h1, h5 {
     color: #333;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /*form ====================*/
 #main-container {
     background-color: #FFFFFF;
@@ -142,10 +146,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 #form-container .btn-form:hover {
     background-color: #eb7831;
-}
-
-#form-container .hidden {
-    display: none;
 }
 
 #form-container .loading{
@@ -280,6 +280,59 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 #btn-pagamento {
     margin-bottom: 25px;
 }
+
+.center-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    /* position: absolute; */
+    margin-top: 15px;
+    margin-bottom: -5px;
+
+    width: 180px;
+    height: 40px;
+
+    font-size: 16px;
+    color: #fff;
+
+    background-color: #202231;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: width .5s;
+    border-radius: .5s;
+}
+.text {
+    padding: auto;
+}
+.button *{
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    transition: opacity .5s;
+}
+.button:focus {
+    width: 40px;
+    height: 40px;
+
+    background-color: #44c08a;
+
+    border-radius: 50%;
+}
+.button:focus .text{
+    transition-delay: .5s;
+}
+.button:focus .icon{
+    transition-delay: .5s;
+}
+
 
 @media only screen and (max-width: 1440px) {
     #pass-container{

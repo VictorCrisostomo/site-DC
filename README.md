@@ -44,7 +44,7 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [x] Converter o `Overlay` de `SVG` para `PNG`;
 - [x] Tirar print do `Overlay`;
 - [x] fazer download do `Overlay`;
-- [ ] alterar texto de pagamento, conforme selecionado pelo mesmo;
+- [x] alterar texto de pagamento, conforme selecionado pelo mesmo;
 - [ ] Direcionar o usuario para o pagamento conforme o selecionado pelo mesmo;
 - [ ] Criar um Modal para pagamento com PIX;
 - [ ] Criar botão de `Nova Inscrição` resetando o LocalStorage;

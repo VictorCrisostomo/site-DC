@@ -130,7 +130,7 @@
         <section class="col-12 col-md-6 order-md-3" id="btn-act">
             <div class="row align-items-center justify-content-center">
                 <p class="text-muted text-center">Você selecionou a opção de pagamento por <strong id="form-PG"></strong> clique no botão abaixo para acessar a <strong>Área de Pagamento</strong></p>
-                <a href="" class="btn btn-primary" id="btn-pagamento">Pagar</a>
+                <a href="" class="btn btn-primary" id="btn-pagamento" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</a>
 
                 <p class="text-muted text-center">A próxima etapa é você entrar no nosso grupo de Whatsapp para receber as informações relacionadas ao Retiro.</p>
                 <a href="" class="btn btn-success" id="btn-whats">Entrar no Grupo</a>
@@ -138,6 +138,72 @@
         </section>
     </div>
 </div>
+
+<!-- MODAIS -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Área de pagamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="center-payment hidden" id="pix-250">
+                <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
+                <p class="text-muted text-center">
+                    Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
+                </p> 
+                <img src="../img/PIX-250.png" width="40%" alt="Pix 250"/>
+                <button class="button" type="button" id="">
+                    <span class="text text-center">Copiar código</span>
+                    <i class="bi bi-check-lg icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="center-payment hidden" id="pix-125">
+                <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
+                <p class="text-muted text-center">
+                    Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
+                </p> 
+                <img src="../img/PIX-125.png" width="40%" alt="Pix 125"/>
+                <button class="button" type="button" id="">
+                    <span class="text text-center">Copiar código</span>
+                    <i class="bi bi-check-lg icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="center-payment hidden" id="credito">
+                <strong class="h5 text-muted text-center">Pagamento com o cartão de credito</strong>
+                <p class="text-muted text-center">
+                    Você será redirecionado pra uma tela de pagamento <br>Clique no botão abaixo
+                </p>
+                <button class="button" type="button" id="">
+                    Fazer pagamento
+                </button>
+            </div>
+
+            <div class="center-payment" id="pay-hands">
+                <strong class="h5 text-muted text-center">Pagar em mãos</strong>
+                <p class="text-muted text-center">
+                    Você será redirecionado para entrar em contato no Whatsapp da equipe de organização <br> Clique no botão abaixo
+                </p>
+                <button class="button" type="button" id="">
+
+                </button>
+            </div>
+            <br>
+            <p class="text-center text-muted">
+                Você selecionou: <strong>Adulto (R$ 250,00)</strong>
+                <br>
+                Forma de pagamento: <strong>PIX</strong>
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <footer>
     <div class="container-fluid container-footer">

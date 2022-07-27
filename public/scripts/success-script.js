@@ -65,7 +65,7 @@ const Overlay = {
 }
 
 const Pagmento = {
-    forma() {
+    botaoModal() {
         let form = captVal.forma;
 
         if (form === "PIX") {
@@ -75,7 +75,7 @@ const Pagmento = {
         } else {
             formPG.innerHTML= form
         }
-    }
+    },
 }
 
     //  campos de conferencia
@@ -93,6 +93,9 @@ const Pagmento = {
     segNomeData.innerHTML= Overlay.lastName();
     origemData.innerHTML= Overlay.location();
     numInscData.innerHTML= Overlay.numId();
+
+    // campo de pagamento
+    formPG.innerHTML= captVal.forma
 
 const {x, y, width, height} = svg.viewBox.baseVal;
 const blob = new Blob([svg.outerHTML], {type: 'image/svg+xml'});
