@@ -22,7 +22,7 @@ app.use(express.static('public'))
 app.use(express.json())
 
 app.get('*', (req, res) => {
-  res.sendFile('index.html', {root: `${__dirname}/scripts/`})
+  res.sendFile('index.html', {root: `${__dirname}/public/scripts/`})
 })
 
 app.post('/', (req, res) => {
