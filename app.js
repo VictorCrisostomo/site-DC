@@ -21,8 +21,8 @@ app.use("/api/product", product);
 app.use(express.static('public'))
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/pages/index.html')
+app.get('*', (req, res) => {
+  res.sendFile('index.html', {root: `${__dirname}/scripts/`})
 })
 
 app.post('/', (req, res) => {
