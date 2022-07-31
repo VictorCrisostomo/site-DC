@@ -11,7 +11,7 @@ h1, h5 {
     color: #333;
 }
 
-.hidden {
+#modal .hidden {
     display: none;
 }
 

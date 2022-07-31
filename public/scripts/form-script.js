@@ -127,9 +127,11 @@ const InputsForm = {
         localidade.trim() === "" ||
         modalidade.trim() === "" ||
         forma.trim() === "") {
-            document.querySelector('body').innerHTML = `<div class="alert alert-danger" role="alert">
-            Por favor, preencha todos os campos.
-          </div>`
+            throw new Error("Preencha todos os campos")
+
+        //     document.querySelector('body').innerHTML = `<div class="alert alert-danger" role="alert">
+        //     Por favor, preencha todos os campos.
+        //   </div>`
         }
     },
 
