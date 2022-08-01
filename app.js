@@ -11,18 +11,15 @@ const emailPass = process.env.PASS_EMAIL
 const emailTo = process.env.EMAILTO
 
 const express = require('express');
-const product = require('./api/product');
+
 const app = express();
-
 const PORT = process.env.PORT || 5050;
-
-app.use("/api/product", product);
 
 app.use(express.static('public'))
 app.use(express.json())
 
-app.get('*', (req, res) => {
-  res.sendFile('index.html', {root: `${__dirname}/public/scripts/`})
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/pages/index.html')
 })
 
 app.post('/', (req, res) => {
@@ -79,5 +76,5 @@ app.post('/', (req, res) => {
 
 // start server express
 app.listen(PORT, () => {
-  console.log(`App started on ${PORT}`);
+  console.log(`App started on http:localhost:${PORT}`);
 })
