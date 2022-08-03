@@ -304,34 +304,70 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     border-radius: 5px;
 
     cursor: pointer;
+    transition: .5s;
 
-    transition: width .5s;
-    border-radius: .5s;
 }
 .text {
     padding: auto;
 }
-.button *{
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-    transition: opacity .5s;
-}
 .button:focus {
-    width: 40px;
+    background-color: #44c08a;
+}
+
+#credito .btn-link1 {
+
+    text-decoration: none;
+    text-align: center;
+    padding: 7px;
+
+    margin-top: 15px;
+    margin-bottom: -5px;
+
+    width: 180px;
     height: 40px;
 
-    background-color: #44c08a;
+    font-size: 16px;
+    color: #fff;
 
-    border-radius: 50%;
+    background-color: #202231;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: .5s;
 }
-.button:focus .text{
-    transition-delay: .5s;
+#credito .btn-link1:focus {
+    background-color: #44c08a;
 }
-.button:focus .icon{
-    transition-delay: .5s;
+
+#pay-hands .btn-link2 {
+
+    text-decoration: none;
+    text-align: center;
+    padding: 7px;
+
+    margin-top: 15px;
+    margin-bottom: -5px;
+
+    width: 180px;
+    height: 40px;
+
+    font-size: 16px;
+    color: #fff;
+
+    background-color: #202231;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: .5s;
 }
+#pay-hands .btn-link2:focus {
+    background-color: #44c08a;
+}
+
 
 
 @media only screen and (max-width: 1440px) {
