@@ -22,6 +22,8 @@ const formPagConf = document.querySelector('#form-pag');
 const formPG = document.querySelector('#form-PG');
 const btnPag = document.querySelector('#btn-pagamento');
 
+const btnNewInsc = document.querySelector('#btn-new-insc');
+
 // Modal
 const pixInt = document.querySelector('#pix-250');
 const pixMeia = document.querySelector('#pix-125');
@@ -42,6 +44,9 @@ const btnWhats = document.querySelector('#btn-whats');
 const Store = {
     get () {
         return JSON.parse(localStorage.getItem('inscricao')) || []
+    },
+    clear () {
+        localStorage.clear()
     }
 }
 
@@ -55,6 +60,13 @@ const captVal = {
     modalidade: Store.get().modalidade,
     forma: Store.get().forma,
     ID: Store.get().inscID
+}
+
+const NewInsc = {
+    returnToInsc(){
+        window.location = "../pages/index.html"
+    }
+
 }
 
 const Overlay = {
@@ -169,6 +181,10 @@ const Pagmento = {
     btnInt.addEventListener("click", () => {
         btnInt.style.backgroundColor = "#44c08a"
         txtInt.innerHTML = "Codigo copiado"
+    })
+    btnNewInsc.addEventListener("click", () => {
+        Store.clear()
+        NewInsc.returnToInsc()
     })
 
 

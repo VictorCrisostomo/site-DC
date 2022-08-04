@@ -47,5 +47,5 @@ Formulario de inscrição com envio de dados para planilha, email e tela de veri
 - [x] alterar texto de pagamento, conforme selecionado pelo mesmo;
 - [x] Direcionar o usuario para o pagamento conforme o selecionado pelo mesmo;
 - [x] Criar um Modal para pagamento com PIX;
-- [ ] Criar botão de `Nova Inscrição` resetando o LocalStorage;
+- [x] Criar botão de `Nova Inscrição` resetando o LocalStorage;
 - [ ] Verificar todos os `Links de Whatsapp`;

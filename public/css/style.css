@@ -263,6 +263,21 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     text-align: right;
 }
 
+#btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#btn-new-insc {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ED8E53;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
 #pass-container{
     position: relative;
     width: 100%;
@@ -375,11 +390,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -17%;
+        margin-top: -23%;
     }
     
     #btn-act{
-        margin-top: -17%;
+        margin-top: -21%;
     }
 }
 
@@ -459,6 +474,10 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     
     #btn-pagamento,
     #btn-whats{
+        width: 50%;
+    }
+
+    #btn-new-insc {
         width: 50%;
     }
 
