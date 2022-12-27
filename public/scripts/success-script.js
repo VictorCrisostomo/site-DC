@@ -120,7 +120,7 @@ const Pagmento = {
 
             pixMeia.classList.remove('hidden')
 
-        } else if (form === "Pagamento parcelado") {
+        } else if (form === "Pagamento parcelado por PIX") {
 
             cartaoCred.classList.remove('hidden')
 
