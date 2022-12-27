@@ -97,7 +97,6 @@ const InputsForm = {
     nome: nome,
     nascimento: nascimento,
     telefone: tel,
-    email: email,
     localidade: local,
     modalidade: modalPag,
     forma: formPag,
@@ -107,7 +106,6 @@ const InputsForm = {
             nome: InputsForm.nome.value,
             nascimento: InputsForm.nascimento.value,
             telefone: InputsForm.telefone.value,
-            email: InputsForm.email.value,
             textInput: textFile.textContent,
             localidade: InputsForm.localidade.value,
             modalidade: InputsForm.modalidade.value,
@@ -117,29 +115,24 @@ const InputsForm = {
     },
 
     validarCampos() {
-        const {nome, nascimento,telefone, email, localidade, modalidade, forma} = InputsForm.pegarValores()
+        const {nome, nascimento,telefone, localidade, modalidade, forma} = InputsForm.pegarValores()
 
         if (
         nome.trim() === "" ||
         nascimento.trim() === "" ||
         telefone.trim() === "" ||
-        email.trim() === "" ||
         localidade.trim() === "" ||
         modalidade.trim() === "" ||
-        forma.trim() === "") {
-            throw new Error("Preencha todos os campos")
-
-        //     document.querySelector('body').innerHTML = `<div class="alert alert-danger" role="alert">
-        //     Por favor, preencha todos os campos.
-        //   </div>`
-        }
+        forma.trim() === "") 
+            {
+                throw new Error("Preencha todos os campos")
+            }
     },
 
     formatarValores() {
         let {nome, nascimento, telefone, email, textInput, localidade, modalidade, forma, inscID} = InputsForm.pegarValores()
         nascimento = Utils.formataData(nascimento);
 
-        
         return {
             nome,
             nascimento,
@@ -224,6 +217,7 @@ const handleSubmit = (event) => {
         Send.mail();
 
     } catch(error) {
+        btnCon.innerHTML = "Concluir inscrição"
         alert(error.message);
     }
 }

@@ -112,15 +112,15 @@ const Pagmento = {
         let mod = captVal.modalidade;
         let form = captVal.forma;
 
-        if (form === "PIX" && mod === "Inteira R$ 250,00 (adulto)") {
+        if (form === "PIX" && mod === "Inteira R$ 280,00 (adulto)") {
 
             pixInt.classList.remove('hidden')
 
-        } else if (form === "PIX" && mod ==="Meia R$ 125,00 (crianças 06 a 11 anos)") {
+        } else if (form === "PIX" && mod ==="Meia R$ 150,00 (crianças 06 a 11 anos)") {
 
             pixMeia.classList.remove('hidden')
 
-        } else if (form === "Cartão de credito") {
+        } else if (form === "Pagamento parcelado") {
 
             cartaoCred.classList.remove('hidden')
 
@@ -140,8 +140,6 @@ const Pagmento = {
             container: document.getElementById('modal')
         });
     }
-
-
 
 }
 
