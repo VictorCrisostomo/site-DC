@@ -270,7 +270,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 #btn-new-insc {
-    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
     background-color: #ED8E53;
     color: #fff;
@@ -395,6 +395,10 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     
     #btn-act{
         margin-top: -21%;
+    }
+
+    #btn-new-insc {
+        margin-top: 20px;
     }
 }
 
