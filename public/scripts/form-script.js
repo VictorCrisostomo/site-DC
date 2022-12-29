@@ -64,12 +64,6 @@ const Utils = {
     capturarFile() {
         realFile.addEventListener('change', function(){
             textFile.textContent = this.files[0].name;
-
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                 console.log(reader.result)
-            });
-            reader.readAsDataURL(this.files[0])
         })
     },
     // Gerar ID de inscrição
@@ -97,6 +91,7 @@ const InputsForm = {
     nome: nome,
     nascimento: nascimento,
     telefone: tel,
+    email: email,
     localidade: local,
     modalidade: modalPag,
     forma: formPag,
@@ -106,6 +101,7 @@ const InputsForm = {
             nome: InputsForm.nome.value,
             nascimento: InputsForm.nascimento.value,
             telefone: InputsForm.telefone.value,
+            email: InputsForm.email.value,
             textInput: textFile.textContent,
             localidade: InputsForm.localidade.value,
             modalidade: InputsForm.modalidade.value,
@@ -180,7 +176,7 @@ const Send = {
                 forma: Store.get().forma,
                 autorizacao: Store.get().textInput,
             })
-         }).then(() => Utils.removeLoading())
+         }).then(() => Utils.removeLoading()) 
     },
     // config de dados para email
     mail() {
@@ -190,12 +186,11 @@ const Send = {
         xhr.onload = function () {
             console.log(xhr.responseText);
             if(xhr.responseText === 'success') {
-                alert('email sent')
+                console.log('email sent')
             } else {
-                alert('algo deu errado papai!')
+                console.log('algo deu errado papai!')
             }
         }
-
         xhr.send(JSON.stringify(Store.get()))
     }
 }
@@ -203,7 +198,6 @@ const Send = {
 // Enviar dados para localStorage e planilha
 const handleSubmit = (event) => {
     event.preventDefault();
-    // Utils.addLoading();
 
     try{
         Utils.addLoading();
@@ -213,7 +207,7 @@ const handleSubmit = (event) => {
         Store.set(InputsForm.formatarValores());
         // enviar dados para planilha 
         Send.planilha();
-        // enviar dados para planilha 
+        // enviar dados para email
         Send.mail();
 
     } catch(error) {
