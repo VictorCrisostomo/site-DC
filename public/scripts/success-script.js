@@ -15,7 +15,8 @@ const nascConf = document.querySelector('#nascimento-conf');
 const localConf = document.querySelector('#local-conf');
 const telConf = document.querySelector('#tel-conf');
 const emailConf = document.querySelector('#email-conf');
-const autorConf = document.querySelector('#autor-conf');
+const nomePastor = document.querySelector('#nome-pastor');
+const telPastor = document.querySelector('#tel-pastor');
 const modalPagConf = document.querySelector('#modal-conf');
 const formPagConf = document.querySelector('#form-pag');
 
@@ -56,7 +57,8 @@ const captVal = {
     localidade: Store.get().localidade,
     telefone: Store.get().telefone,
     email: Store.get().email,
-    autorizacao: Store.get().textInput,
+    nomePastor: Store.get().nomePastor,
+    telPastor: Store.get().telPastor,
     modalidade: Store.get().modalidade,
     forma: Store.get().forma,
     ID: Store.get().inscID
@@ -149,7 +151,8 @@ const Pagmento = {
     localConf.innerHTML= captVal.localidade;
     telConf.innerHTML= captVal.telefone;
     emailConf.innerHTML= captVal.email;
-    autorConf.innerHTML= captVal.autorizacao;
+    nomePastor.innerHTML= captVal.nomePastor;
+    telPastor.innerHTML= captVal.telPastor
     modalPagConf.innerHTML= captVal.modalidade;
     formPagConf.innerHTML= captVal.forma;
 

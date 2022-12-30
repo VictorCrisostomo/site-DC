@@ -8,9 +8,12 @@ const tel = document.querySelector('#telefone');
 const email = document.querySelector('#email');
 const local = document.querySelector('#localidade');
 
-const realFile = document.querySelector('#real-file');
-const btnFile = document.querySelector('#btn-file');
-const textFile = document.querySelector('#text-file');
+const nomePastor = document.querySelector('#pastor-nome');
+const telPastor = document.querySelector('#tel-pastor');
+
+// const realFile = document.querySelector('#real-file');
+// const btnFile = document.querySelector('#btn-file');
+// const textFile = document.querySelector('#text-file');
 
 const modalPag = document.querySelector('#modal-pag');
 const adulto = document.querySelector('#adulto');
@@ -61,11 +64,11 @@ const Utils = {
 
     },
     // capturar arquivo de autoriação
-    capturarFile() {
-        realFile.addEventListener('change', function(){
-            textFile.textContent = this.files[0].name;
-        })
-    },
+    // capturarFile() {
+    //     realFile.addEventListener('change', function(){
+    //         textFile.textContent = this.files[0].name;
+    //     })
+    // },
     // Gerar ID de inscrição
     inscID() {
         let numid =  Math.floor(Math.random() * (1000 - 1300 + 1)) + 1300;
@@ -84,7 +87,7 @@ const Utils = {
 }
 
 // Mostrar arquivo selecionado do input file
-console.log(Utils.capturarFile())
+// console.log(Utils.capturarFile())
 
 // pegar valores do input
 const InputsForm = {
@@ -93,6 +96,8 @@ const InputsForm = {
     telefone: tel,
     email: email,
     localidade: local,
+    pastorNome: nomePastor,
+    pastorTel: telPastor,
     modalidade: modalPag,
     forma: formPag,
 
@@ -102,8 +107,9 @@ const InputsForm = {
             nascimento: InputsForm.nascimento.value,
             telefone: InputsForm.telefone.value,
             email: InputsForm.email.value,
-            textInput: textFile.textContent,
             localidade: InputsForm.localidade.value,
+            nomePastor: InputsForm.pastorNome.value,
+            telPastor: InputsForm.pastorTel.value,
             modalidade: InputsForm.modalidade.value,
             forma: InputsForm.forma.value,
             inscID: Utils.inscID(),
@@ -111,13 +117,15 @@ const InputsForm = {
     },
 
     validarCampos() {
-        const {nome, nascimento,telefone, localidade, modalidade, forma} = InputsForm.pegarValores()
+        const {nome, nascimento,telefone, localidade, nomePastor, telPastor, modalidade, forma} = InputsForm.pegarValores()
 
         if (
         nome.trim() === "" ||
         nascimento.trim() === "" ||
         telefone.trim() === "" ||
         localidade.trim() === "" ||
+        nomePastor.trim() === "" ||
+        telPastor.trim() === "" ||
         modalidade.trim() === "" ||
         forma.trim() === "") 
             {
@@ -126,7 +134,7 @@ const InputsForm = {
     },
 
     formatarValores() {
-        let {nome, nascimento, telefone, email, textInput, localidade, modalidade, forma, inscID} = InputsForm.pegarValores()
+        let {nome, nascimento, telefone, email, localidade, nomePastor, telPastor, modalidade, forma, inscID} = InputsForm.pegarValores()
         nascimento = Utils.formataData(nascimento);
 
         return {
@@ -134,8 +142,9 @@ const InputsForm = {
             nascimento,
             telefone,
             email,
-            textInput,
             localidade,
+            nomePastor,
+            telPastor,
             modalidade,
             forma,
             inscID
@@ -172,9 +181,10 @@ const Send = {
                 telefone: Store.get().telefone,
                 email: Store.get().email,
                 Localidade: Store.get().localidade,
+                nomePastor: Store.get().nomePastor,
+                telPastor: Store.get().telPastor,
                 modalidade: Store.get().modalidade,
                 forma: Store.get().forma,
-                autorizacao: Store.get().textInput,
             })
          }).then(() => Utils.removeLoading()) 
     },

@@ -50,7 +50,8 @@ app.post('/',  (req, res) => {
       localidade: req.body.localidade,
       telefone: req.body.telefone,
       email: req.body.email,
-      autorizacao: req.body.textInput,
+      nomePastor: req.body.nomePastor,
+      telPastor: req.body.telPastor,
       modalPag: req.body.modalidade,
       formPag: req.body.forma,
     }

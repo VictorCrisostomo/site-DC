@@ -26,6 +26,9 @@ h1, h5 {
 #min-inputs .form-label {
     margin-left: 12px;
 }
+#mini-inputs .form-label {
+    margin-left: 12px;
+}
 
 #form-container .form-control {
     color: #6c757d;
