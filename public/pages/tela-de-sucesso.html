@@ -25,6 +25,7 @@
     <!-- OVERLAY -->
 <div class="container col-11 col-md-9">
     <div class="row align-items-center">
+        <!-- Img Download -->
         <section class="col-12 col-md-6 order-md-2" id="pass-container">
             <div class="card img-overlay">
 
@@ -126,18 +127,19 @@
                     <p class="text-muted " id="form-pag">.</p>
                 </section>
                 <p class="text-muted text-center text-contact link">*Caso algum dado esteja incorreto, entre em contato <a href="https://wa.me/5573998038152?text=Ol%C3%A1%21+Minha+inscri%C3%A7%C3%A3o+est%C3%A1+com+os+dados+incorretos" target="_blank" rel="noopener noreferrer">clicando aqui</a>.</p>
-                <div id="btn-container">
-                    <button class="btn btn-new-insc" id="btn-new-insc">
-                        Fazer uma nova inscrição
-                    </button>
-                </div>
         </div>
+
+
 
         <!-- BUTTONS-SEC -->
         <section class="col-12 col-md-6 order-md-3" id="btn-act">
             <div class="row align-items-center justify-content-center">
-                <p class="text-muted text-center">Você selecionou a opção de pagamento por <strong id="form-PG"></strong> clique no botão abaixo para acessar a <strong>Área de Pagamento</strong></p>
+
+                <p class="text-muted text-center">Você selecionou a opção de pagamento por <strong id="form-PG"></strong> clique no botão abaixo para acessar a <strong>Área de Pagamento</strong>.</p>
                 <a href="" class="btn btn-primary" id="btn-pagamento" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</a>
+
+                <p class="text-muted text-center">A próxima etapa é você nos enviar uma Autorização Pastoral, este doscumento é <strong>obrigatório!</strong> Sem ele sua inscrição não será validada.<br>(no arquivo tem as informações sobre o envio)</p>
+                <a href="https://drive.google.com/file/d/11KX6ODR9kN4a1m7JZvLe31_RMy5-LNyW/view?usp=sharing" target="_blank" rel="noopener noreferrer" id="btn-autor" class="btn btn-success">Baixar autorização Pastoral</a>
 
                 <p class="text-muted text-center">A próxima etapa é você entrar no nosso grupo de Whatsapp para receber as informações relacionadas ao Retiro.</p>
                 <a href="https://chat.whatsapp.com/CwemRETmNr9BRwlKtJMFfr" target="_blank" rel="noopener noreferrer" class="btn btn-success" id="btn-whats">Entrar no Grupo</a>
@@ -146,105 +148,107 @@
     </div>
 </div>
 
+<div id="btn-container">
+    <button class="btn btn-new-insc" id="btn-new-insc">
+        Fazer uma nova inscrição
+    </button>
+</div>
+
 <!-- MODAIS -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Área de pagamento</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="modal" >
-
-            <div class="center-payment hidden" id="pix-250">
-                <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
-                <p class="text-muted text-center">
-                    Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
-                </p> 
-                <img src="../img/PIX-280.jpg" width="40%" alt="Pix 250"/>
-                <button class="button" data-clipboard-text="00020126590014br.gov.bcb.pix0114+55739913199130219Inscricao integral 5204000053039865406280.005802BR5925Jezimiel Neves De Oliveir6009Sao Paulo62140510Retiro2023630429C9" id="btn-250">
-                    <span class="text text-center" id="txt-250">Copiar código</span>
-                </button>
+            <div class="modal-header">
+            <h5 class="modal-title">Área de pagamento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-                
-                <div class="center-payment hidden" id="pix-125">
-                <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
-                <p class="text-muted text-center">
-                    Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
-                </p> 
-                <img src="../img/PIX-150.jpg" width="40%" alt="Pix 125"/>
-                <button class="button" data-clipboard-text="00020126630014br.gov.bcb.pix0114+55739913199130223Inscricaocrianca06/105204000053039865406150.005802BR5925Jezimiel Neves DeOliveir6009Sao Paulo62140510Retiro20236304CC19" id="btn-125">
-                    <span class="text text-center" id="txt-125">Copiar código</span>
-                </button>
-            </div>
-
-            <div class="center-payment hidden" id="credito">
-                <strong class="h5 text-muted text-center">Pagamento Parcelado por Pix</strong>
-                <p class="text-muted text-center">
-                    O valor é parcelado em 4 vezes, sendo a 1° parcela  em 15 de Janeiro, 2° parcela em 15 de Fevereiro, 3° parcela em 15 de Março, 4° parcela 05 de Abril de 2023.
+                <div class="modal-body" id="modal" >
+                    <!-- Pg pix 280 -->
+                    <div class="center-payment hidden" id="pix-250">
+                        <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
+                        <p class="text-muted text-center">
+                            Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
+                        </p> 
+                        <img src="../img/PIX-280.jpg" width="40%" alt="Pix 250"/>
+                        <button class="button" data-clipboard-text="00020126590014br.gov.bcb.pix0114+55739913199130219Inscricao integral 5204000053039865406280.005802BR5925Jezimiel Neves De Oliveir6009Sao Paulo62140510Retiro2023630429C9" id="btn-250">
+                            <span class="text text-center" id="txt-250">Copiar código</span>
+                        </button>
+                    </div>
+                    <!-- Pg pix 150 -->
+                    <div class="center-payment hidden" id="pix-125">
+                        <strong class="h5 text-muted text-center">Use o QR Code do Pix para pagar</strong>
+                        <p class="text-muted text-center">
+                            Abra o app em que vai fazer a transferência,<br>escaneie a imagem ou clique no botão abaixo do QR Code
+                        </p> 
+                        <img src="../img/PIX-150.jpg" width="40%" alt="Pix 125"/>
+                        <button class="button" data-clipboard-text="00020126630014br.gov.bcb.pix0114+55739913199130223Inscricaocrianca06/105204000053039865406150.005802BR5925Jezimiel Neves DeOliveir6009Sao Paulo62140510Retiro20236304CC19" id="btn-125">
+                            <span class="text text-center" id="txt-125">Copiar código</span>
+                        </button>
+                    </div>
+                    <!-- pagamento cartao de credito -->
+                    <div class="center-payment hidden" id="credito">
+                        <strong class="h5 text-muted text-center">Pagamento Parcelado por Pix</strong>
+                        <p class="text-muted text-center">
+                            O valor é parcelado em 4 vezes, sendo a 1° parcela  em 15 de Janeiro, 2° parcela em 15 de Fevereiro, 3° parcela em 15 de Março, 4° parcela 05 de Abril de 2023.
+                        </p>
+                        <a href="https://wa.me/5573991319913" target="_blank" rel="noopener noreferrer" class="btn-link1">Fazer pagamento</a>
+                    </div>
+                    <!-- pagar em mãos -->
+                    <div class="center-payment hidden" id="pay-hands">
+                        <strong class="h5 text-muted text-center">Pagar em mãos</strong>
+                        <p class="text-muted text-center">
+                            Você será redirecionado para entrar em contato no Whatsapp da equipe de organização <br> Clique no botão abaixo
+                        </p>
+                        <a href="https://wa.me/5573991319913" class="btn-link2">Ir para o Whatsapp</a>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-center text-muted">
+                    Você selecionou: <strong id="mod-select">Adulto (R$ 250,00)</strong>
+                    <br>
+                    Forma de pagamento: <strong id="form-select">PIX</strong>
+                    <br>
+                    Titular da conta: <strong>Jezimiel Neves</strong>
                 </p>
-                <a href="https://wa.me/5573991319913" target="_blank" rel="noopener noreferrer" class="btn-link1">Fazer pagamento</a>
-            </div>
-
-            <div class="center-payment hidden" id="pay-hands">
-                <strong class="h5 text-muted text-center">Pagar em mãos</strong>
-                <p class="text-muted text-center">
-                    Você será redirecionado para entrar em contato no Whatsapp da equipe de organização <br> Clique no botão abaixo
-                </p>
-                <a href="https://wa.me/5573991319913" class="btn-link2">Ir para o Whatsapp</a>
-            </div>
-
-        </div>
-            <hr>
-            <p class="text-center text-muted">
-                Você selecionou: <strong id="mod-select">Adulto (R$ 250,00)</strong>
-                <br>
-                Forma de pagamento: <strong id="form-select">PIX</strong>
-                <br>
-                Titular da conta: <strong>Jezimiel Neves</strong>
-            </p>
         </div>
       </div>
     </div>
   </div>
 
-<footer>
-    <div class="container-fluid container-footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 order-md-2">
-                    <div class="align-itens-center">
-                        <img src="../img/igreja.svg" class="img-footer-left logo-igreja" alt="">
+    <footer>
+        <div class="container-fluid container-footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 order-md-2">
+                        <div class="align-itens-center">
+                            <img src="../img/igreja.svg" class="img-footer-left logo-igreja" alt="">
+                        </div>
+                        <div class="align-itens-center">
+                            <img src="../img/logo-retiro-footer.svg" class="img-footer-left logo-retiro" alt="">
+                        </div>
                     </div>
-                    <div class="align-itens-center">
-                        <img src="../img/logo-retiro-footer.svg" class="img-footer-left logo-retiro" alt="">
+                    <div class="col-12 col-md-6 order-md-1">
+                        <p class="text-muted text-footer">Caso esteja tendo dificuldades em fazer sua inscrição:</p>
+                        <p class="text-contact"><a href="https://wa.me/5573998038152?text=Ol%C3%A1%21+eu+estou+com+dificuldades+em+fazer+minha+inscri%C3%A7%C3%A3o+pro+retiro." target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Clique aqui</a></p>
+        
+                        <hr>
+                        <p class="text-muted text-footer txt2">Caso tenha duvidas sobre o retiro:</p>
+                        <p class="text-contact"><a href="https://wa.me/5573991319913?text=Ol%C3%A1%21+eu+estou+com+duvidas+sobre+o+retiro." target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Clique aqui</a></p>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 order-md-1">
-                    <p class="text-muted text-footer">Caso esteja tendo dificuldades em fazer sua inscrição:</p>
-                    <p class="text-contact"><a href="https://wa.me/5573998038152?text=Ol%C3%A1%21+eu+estou+com+dificuldades+em+fazer+minha+inscri%C3%A7%C3%A3o+pro+retiro." target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Clique aqui</a></p>
-    
-                    <hr>
-                    <p class="text-muted text-footer txt2">Caso tenha duvidas sobre o retiro:</p>
-                    <p class="text-contact"><a href="https://wa.me/5573991319913?text=Ol%C3%A1%21+eu+estou+com+duvidas+sobre+o+retiro." target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Clique aqui</a></p>
-                </div>
 
-        </div>
-        </div>
-</footer>
-<div class="container extra-footer">
-    <div class="row align-itens-center">
-        <div class="col-6">
-            <p class="text-extra-footer text-muted">developed by:</p>
-        </div>
-        <div class="col-6">
-            <img src="../img/logo.svg" class="img-logo">
+            </div>
+            </div>
+    </footer>
+    <div class="container extra-footer">
+        <div class="row align-itens-center">
+            <div class="col-6">
+                <p class="text-extra-footer text-muted">developed by:</p>
+            </div>
+            <div class="col-6">
+                <img src="../img/logo.svg" class="img-logo">
 
+            </div>
         </div>
     </div>
-</div>
-
-
-
 </body>
 </html>

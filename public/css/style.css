@@ -255,7 +255,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 #main-container .text-data {
     margin-bottom: 5px;
 }
-#main-container .text-email {
+#main-cobtn-new-inscntainer .text-email {
     overflow-wrap: break-word;
 }
 .link{
@@ -274,7 +274,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 #btn-new-insc {
     margin-bottom: 20px;
-    width: 100%;
     background-color: #ED8E53;
     color: #fff;
     display: flex;
@@ -296,7 +295,18 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 #btn-pagamento {
-    margin-bottom: 25px;
+    margin-bottom: 30px !important;
+}
+
+#btn-autor {
+    width: 100%;
+    background-color: #eb7831;
+    border: none;
+    margin-bottom: 30px !important;
+}
+
+#btn-whats {
+    margin-bottom: 30px !important;
 }
 
 .center-payment {
@@ -480,11 +490,8 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     }
     
     #btn-pagamento,
-    #btn-whats{
-        width: 50%;
-    }
-
-    #btn-new-insc {
+    #btn-whats,
+    #btn-autor {
         width: 50%;
     }
 
