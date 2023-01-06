@@ -10,6 +10,7 @@ const hbs = require('nodemailer-express-handlebars')
 const emailUser = process.env.USER_EMAIL
 const emailPass = process.env.PASS_EMAIL
 const emailTo = process.env.EMAILTO
+const emailTo2 = process.env.EMAILTO2
 
 
 const app = express();
@@ -40,7 +41,7 @@ app.post('/',  (req, res) => {
   transporter.use('compile', hbs(handlebarOptions))
   let mailOptions = {
     from: `Victor Crisóstomo <${emailUser}>`,
-    to: emailTo,
+    to: `${emailTo}, ${emailTo2}`,
     subject: `✅ Nova inscrição - ${req.body.inscID} | ${req.body.nome} `,
     template: 'main',
     context: {
