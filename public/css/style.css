@@ -396,6 +396,12 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     background-color: #44c08a;
 }
 
+#btn-pagamento,
+#btn-whats,
+#btn-autor {
+    width: 100%;
+}
+
 
 
 @media only screen and (max-width: 1440px) {
@@ -403,16 +409,16 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -23%;
+        /* margin-top: -23%; */
     }
     
-    #btn-act{
+    /* #btn-act{
         margin-top: -21%;
-    }
+    } */
 
-    #btn-new-insc {
+    /* #btn-new-insc {
         margin-top: 20px;
-    }
+    } */
 }
 
 @media only screen and (max-width: 1024px) {
@@ -420,12 +426,10 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         position: relative;
         width: 50%;
 
-        margin-top: -30%;
+        /* margin-top: -30%; */
     }
     
-    #btn-act{
-        margin-top: -30%;
-    }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -438,9 +442,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         order: -1 !important;
     }
 
-    #btn-act{
+    /* #btn-act{
         margin-top: 0;
-    }
+    } */
 }
 
 @media(min-width: 768px) {
@@ -481,18 +485,23 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         border-top: 1px solid;
     }
 
-
-    /* TELA DE SUCESSOS */
     #btn-act{
+        margin-top: 2.5em;
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .infos-actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    /* TELA DE SUCESSOS */
+    /* #btn-act{
         margin-left:auto;
-        /* margin-top: -155px; */
+        margin-top: -155px;
         padding-bottom: 30px;
-    }
-    
-    #btn-pagamento,
-    #btn-whats,
-    #btn-autor {
-        width: 50%;
-    }
+    } */
 
 }
